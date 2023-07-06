@@ -4,6 +4,7 @@ const { Playlist, Song } = require("../../models");
 router.get("/", async (req, res) => {
   // find one from playlist
   try {
+
   } catch (error) {
     res.status(500).json(error);
   }
@@ -34,19 +35,15 @@ router.get("/favorites", async (req, res) => {
       where: { favorite: true },
       include: [Song],
     });
+    const favorites = favoritesData.map((favorite) => {
+        favorite.get({plain:true});
+    });
+    res.render('favorites', { favorites });
   } catch (error) {
     res.status(500).json(error);
   }
 });
 
-router.delete("/favorites", async (req, res) => {
-  // destroy
-  try {
-
-  } catch (error) {
-    res.status(500).json(error);
-  }
-});
 
 router.get("/history", async (req, res) => {
   try {
@@ -57,7 +54,7 @@ router.get("/history", async (req, res) => {
     const songs = playlistData.map((song) =>{
         song.get({plain:true});
     });
-    // res.render('handleName', songs); 
+    res.render('history', { songs }); 
   } catch (error) {
     res.status(500).json(error);
   }
