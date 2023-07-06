@@ -1,1 +1,61 @@
 /* front-end styling goes here... */
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body { 
+  width: 100%;
+  height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1501612780327-45045538702b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fG11c2ljfGVufDB8fDB8fHww&auto=format&fit=crop&w=900&q=60') ;
+  background-position: center; 
+  background-size: cover;
+  position: relative;
+}
+.navbar{ 
+  margin: auto; 
+  padding: 15px 0; 
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul li { 
+  list-style: none; 
+  display: inline-block; 
+  margin: 0 15px;
+
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.container{ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.box{
+  width: 300px;
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+
+.left{
+  margin-right: 10px;
+}
+
+
+.right{
+  margin-left: 10px;
+}
+
+ h1{
+  font-size: 24px;
+  textalign: center;
+  margin-bottome: 10px;
+}
