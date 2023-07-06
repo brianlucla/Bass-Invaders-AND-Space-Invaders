@@ -19,6 +19,10 @@ Song.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    youtube_url: {
+      type:DataTypes.STRING,
+      allowNull:true,
+    },
     playlist_id: {
       type: DataTypes.INTEGER,
       references: {
