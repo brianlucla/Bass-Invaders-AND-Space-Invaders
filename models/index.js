@@ -7,9 +7,9 @@ Playlist.hasMany(Song, {
   onDelete:'CASCADE',
 });
 
-Song.belongsToMany(Playlist,{
-  foreignKey:'playlist_id',
-  onDelete: 'SET NULL',
-})
+// Song.belongsToMany(Playlist,{
+//   foreignKey:'playlist_id',
+//   onDelete: 'SET NULL',
+// });
 
 module.exports = { User, Playlist, Song }

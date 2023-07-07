@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS example_db;
+DROP DATABASE IF EXISTS bass_db;
 
-CREATE DATABASE example_db;
+CREATE DATABASE bass_db;
