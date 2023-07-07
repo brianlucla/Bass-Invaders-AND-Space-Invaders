@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { Playlist, Song } = require("../../models");
 
 router.get("/", async (req, res) => {
-  // find one from playlist
+  // find all from playlist
   try {
 
   } catch (error) {
@@ -59,3 +59,5 @@ router.get("/history", async (req, res) => {
     res.status(500).json(error);
   }
 });
+
+module.exports = router;

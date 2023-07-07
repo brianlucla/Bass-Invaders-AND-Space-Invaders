@@ -3,23 +3,25 @@ const sequelize = require('../config/index.js');
 
 class Playlist extends Model {}
 
-Playlist.init({
-  id:{
-    type:DataTypes.INTEGER,
-    primaryKey:true,
-    autoIncrement:true,
-    allowNull:false.
+Playlist.init(
+  {
+    id:{
+      type:DataTypes.INTEGER,
+      primaryKey:true,
+      autoIncrement:true,
+      allowNull:false,
+    },
+    favorite:{
+      type: DataTypes.BOOLEAN,
+      allowNull:false,
+      defaultValue:false,
+    },
   },
-  favorite:{
-    type: DataTypes.BOOLEAN,
-    allowNull:false,
-    defaultValue:false,
-  }
-},
   {
     sequelize,
     timestamps: false,
-    modelName: 'playlist'
+    modelName: 'playlist',
+    freezeTableName:true,
   }
   );
 
