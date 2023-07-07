@@ -164,3 +164,20 @@ h1 {
 #password {
     margin-bottom: 15px;
 }
+
+/* ----------------- ABOUT US PAGE  --------------- */
+
+.about-us-card {
+    background-color: rgb(86, 86, 92);
+    color: white;
+    /* height: 500px;
+    width: 700px; */
+    margin: 0 auto;
+    margin-top: 10%;
+    border: 3px solid var(--color1);
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
