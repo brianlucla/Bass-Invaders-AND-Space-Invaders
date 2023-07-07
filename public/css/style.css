@@ -101,10 +101,12 @@ h1 {
     margin-right: 20px;
 }
 
-.output-container {
-    width: 650px;
-    padding: 5rem;
-    background-color: grey;
+
+.output-container{
+  width: 650px;
+  padding: 5rem;
+  background-color:navy;
+
 }
 
 /* LOG IN / SIGN UP PAGE CSS */
