@@ -43,27 +43,36 @@
     </nav>
     <!-- end of navbar -->
 
-    <!-- WHAT"S THE VIBE CONTENT-->
-<div class="signInForm">
-    <h2 class="text-center">SIGN IN OR SIGN UP</h2>
-    <form>
-        <div class="form-group">
-            <label for="email">EMAIL:</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter email">
+    <!-- LOG IN/ SIGN UP FORM-->
+<div class="sign-container">
+    <div class="signInForm">
+        <div class="front-face">
+            <h2 class="text-center">SIGN IN OR SIGN UP</h2>
+            <form>
+                <div class="form-group">
+                    <label for="email">EMAIL:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="password">PASSWORD:</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter password">
+                </div>
+               
+                <div class="text-center flip-btn">
+                    <button type="submit" id="sign-in-btn" onclick="flipform()" class="btn btn-primary">SIGN IN</button>
+                    <span class="mx-2">OR</span>
+                    <button type="submit" id="sign-up-btn" class="btn btn-secondary">SIGN UP</button>
+                </div> 
+            </form>
         </div>
-        <div class="form-group">
-            <label for="password">PASSWORD:</label>
-            <input type="password" class="form-control" id="password" placeholder="Enter password">
-        </div>
-        <div class="text-center">
-            <button type="submit" id="sign-in-btn" class="btn btn-primary">SIGN IN</button>
-            <span class="mx-2">OR</span>
-            <button type="submit" id="sign-up-btn" class="btn btn-secondary">SIGN UP</button>
-        </div>
-    </form>
+    </div>
 </div>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="/login.js"></script>
+  
+
+
 </body>
 
 </html>
