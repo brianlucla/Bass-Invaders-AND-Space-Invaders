@@ -1,131 +1,168 @@
 /* front-end styling goes here... */
 
 :root {
-  --color1: #402090;
+    --color1: #402090;
 }
 
-*{
-  padding: 0;
-  margin: 0;
+* {
+    padding: 0;
+    margin: 0;
 }
 
-body { 
-  width: 100%;
-  height: 100vh;
-  background-image: url('https://images.unsplash.com/photo-1501612780327-45045538702b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fG11c2ljfGVufDB8fDB8fHww&auto=format&fit=crop&w=900&q=60') ;
-  background-position: center; 
-  background-size: cover;
-  position: relative;
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1501612780327-45045538702b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fG11c2ljfGVufDB8fDB8fHww&auto=format&fit=crop&w=900&q=60');
+    background-position: center;
+    background-size: cover;
+    position: relative;
 }
-.navbar{ 
-  margin: auto; 
-  padding: 15px 0; 
-  display: flex;
-  align-items: center;
+.navbar {
+    margin: auto;
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
 }
 
-.navbar ul li { 
-  list-style: none; 
-  display: inline-block; 
-  margin: 0 15px;
-
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 15px;
 }
 
 .navbar ul li a {
-  text-decoration: none;
-  color: white;
-  font-family: sans-serif;
-  font-weight: bold;
+    text-decoration: none;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
 }
 
-.container{ 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
-.box{
-  width: 300px;
-  padding: 20px;
-  background-color: #f2f2f2;
-}
-
-.left{
-  margin-right: 10px;
+.box {
+    width: 300px;
+    padding: 20px;
+    background-color: #f2f2f2;
 }
 
-
-.right{
-  margin-left: 10px;
+.left {
+    margin-right: 10px;
 }
 
- h1{
-  font-size: 24px;
-  textalign: center;
-  margin-bottome: 10px;
+.right {
+    margin-left: 10px;
 }
 
-
-.video-container{ 
-  display: flex; 
-  overflow-x: auto;
-  margin-top: 20px;
+h1 {
+    font-size: 24px;
+    textalign: center;
+    margin-bottome: 10px;
 }
 
-.video-item{
-  flex-shrink: 0;
-  margin-right: 10px;
+.video-container {
+    display: flex;
+    overflow-x: auto;
+    margin-top: 20px;
 }
 
-.search-box{
-  width: 700px;
-  margin: auto;
-  padding: 20px 20px 20px 20px;
-  background-color: #f2f2f2;
+.video-item {
+    flex-shrink: 0;
+    margin-right: 10px;
 }
 
-.search-container{
-  display:flex; 
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
+.search-box {
+    width: 700px;
+    margin: auto;
+    padding: 20px 20px 20px 20px;
+    background-color: #f2f2f2;
 }
 
-.search-form{
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
 }
 
-.search-input{
-  width: 300px;
-  padding: 8px;
-  font-size: 30px;
-  margin-right: 20px;
+.search-form {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
 }
+
+.search-input {
+    width: 300px;
+    padding: 8px;
+    font-size: 30px;
+    margin-right: 20px;
+}
+
 
 .output-container{
   width: 650px;
   padding: 5rem;
   background-color:navy;
+
 }
-
-
 
 /* LOG IN / SIGN UP PAGE CSS */
 
-.signInForm {
-  background-color: var(--color1);
-  color: white;
-  height: 300px;
-  width: 600px;
-  margin: 0 auto;
-  margin-top: 25%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  display: block;
-  padding: 25px;
-  line-height: 35px;
+.login-navbar {
+    margin: auto;
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
 }
 
+.login-navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.login-navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-left: 245px;
+}
+
+.signInForm {
+    background-color: rgb(86, 86, 92);
+    color: white;
+    height: 300px;
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    padding: 25px;
+    line-height: 35px;
+    border: 4px solid var(--color1);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+#sign-in-btn {
+    background-color: var(--color1);
+    border: 1px solid black;
+}
+
+#sign-up-btn {
+    background-color: var(--color1);
+    border: 1px solid black;
+}
+
+#password {
+    margin-bottom: 15px;
+}
