@@ -3,7 +3,7 @@
 :root {
     --color1: #402090;
     --black: #212529;
-    --purps: ##b187ff;
+    --purple: ##b187ff;
     --pnk: #fc97d0;
     --tea: #60e1c4;
 }
@@ -51,6 +51,9 @@ body {
     width: 300px;
     padding: 20px;
     background-color: #f2f2f2;
+    border-radius: 10px;
+    box-shadow:0 0 40px var(--pnk);
+    font-weight: bold;
 }
 
 .left {
@@ -64,7 +67,7 @@ body {
 h1 {
     font-size: 24px;
     text-align: center;
-    margin-bottome: 10px;
+    margin-bottom: 10px;
 }
 
 .video-container {
@@ -90,6 +93,7 @@ h1 {
     justify-content: center;
     align-items: center;
     margin-top: 10px;
+    border-radius: 10px;
 }
 
 .search-form {
@@ -206,13 +210,14 @@ margin-top: 20px;
 }
 
 .form-box a{ 
-  color: 
+  color: var(--pnk);
 }
 
 #log-in-btn {
     background-color: #fc97d0;
     border: 2px solid #fc97d0;
     border-radius: 46px;
+    
 }
 
 #sign-up-btn {
