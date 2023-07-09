@@ -2,6 +2,10 @@
 
 :root {
     --color1: #402090;
+    --black: #212529;
+    --purps: ##b187ff;
+    --pnk: #fc97d0;
+    --tea: #60e1c4;
 }
 
 * {
@@ -130,8 +134,96 @@ h1 {
     margin-left: 245px;
 }
 
+/* .sign-container{
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 20px;
 
-.signInForm {
+} */
+
+.flip-container {
+  perspective: 1000px;
+  line-height: 45px;
+  font-weight: bold;
+}
+
+/* .flip-container:hover .flipper, 
+.flip-container.hover .flipper {
+  transform: rotateY(180deg);
+} */
+
+.flip-container.flip .flipper {
+  transform: rotateY(180deg);
+}
+
+.flip-container, 
+.front, 
+.back {
+  width: 100%;
+  height: 100%;
+}
+
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.front {
+  z-index: 2;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.form-box {
+  margin: 30px auto;
+  max-width: 400px;
+  padding: 20px;
+  border: 2px solid var(--tea);
+  background-color: #212529;
+  box-shadow: 0 0 40px var(--tea);
+}
+
+.form-box h2 {
+  text-align: center; 
+  color: white;
+}
+
+.form-box p, 
+.form-box label {
+  color: white;
+}
+
+.form-box a{ 
+  color: 
+}
+
+#log-in-btn {
+    background-color: #fc97d0;
+    border: 2px solid #fc97d0;
+    border-radius: 46px;
+}
+
+#sign-up-btn {
+    background-color: #b187ff;
+    border: 1px solid #b187ff;
+    border-radius: 46px;
+}
+
+
+
+/* .signInForm {
     background-color: rgb(86, 86, 92);
     color: white;
     height: 300px;
@@ -150,46 +242,87 @@ h1 {
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
-    perspective: 1000px;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.6s;
-}
+    box-shadow: 0 5px 10px rgba(237, 76, 175, 0.901);
+    
+} */
+/* animation-name: flip-with-rotate; */
 
+/* .flipcard-inner {
+  perspective: 1000px;
+  position: relative;
+  text-align: center;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+} */
+
+/* @keyframes flip-with-rotate {
+  0%{
+    transform: perspective(400px) rotateX(0);
+  }
+  100% {
+    transform: perspective(400px) rotateX(180deg);
+  }
+} */
+
+/* 
 .signInForm.flipped {
   transform: rotateY(180deg);
 }
 
-.font-face, 
+.front-face, 
 .back-face {
   position: absolute;
   width: 100%;
   height: 100%;
+  textalign: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
   backface-visibility: hidden;
-  transition: transform 0.6s;
+
 }
 
-.font-face{
-  transform: rotateY(0deg);
-}
+.front-face{
 
-.back-face{
+  color: white;
+} */
+  /* transform: rotateY(180deg); */
+
+/* .back-face{
   transform: rotateY(180deg);
   background-color: rgb(86, 86, 92);
   padding: 25px;
   border-radius: 10px;
-}
+  position: absolute;
+} */
 
-#sign-in-btn {
-    background-color: var(--color1);
-    border: 1px solid black;
-}
-
-#sign-up-btn {
-    background-color: var(--color1);
-    border: 1px solid black;
-}
-
-#password {
+/* #password {
     margin-bottom: 15px;
+}
+
+.signInForm:hover .flipcard-inner {
+  transform: rotateY(180deg);
+}
+
+input[type=checkbox]:checked + .signInForm .flipcard-inner{
+  transform: rotateY(180deg);
+} */
+
+/* Media QUERIES */
+
+@media (max-width: 767px) {
+  .form-box{
+    max-width: 100%;
+    padding: 15px;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .form-box {
+    max-width: 80%;
+  }
+}
+
+@media (min-width: 992px) {
+  .form-box {
+    max-width: 400px;
+  }
 }
