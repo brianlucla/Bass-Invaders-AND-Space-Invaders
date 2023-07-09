@@ -2,6 +2,12 @@
 
 :root {
     --color1: #402090;
+    --black: #212529;
+    --purple: ##b187ff;
+    --pnk: #fc97d0;
+    --tea: #60e1c4;
+
+
 }
 
 * {
@@ -47,6 +53,9 @@ body {
     width: 300px;
     padding: 20px;
     background-color: #f2f2f2;
+    border-radius: 10px;
+    box-shadow:0 0 40px var(--pnk);
+    font-weight: bold;
 }
 
 .left {
@@ -59,6 +68,8 @@ body {
 
 h1 {
     font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
     textalign: center;
     margin-bottome: 10px;
 }
@@ -86,6 +97,7 @@ h1 {
     justify-content: center;
     align-items: center;
     margin-top: 10px;
+    border-radius: 10px;
 }
 
 .search-form {
@@ -123,6 +135,112 @@ h1 {
     display: inline-block;
     margin: 0 15px;
 }
+
+.login-navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-left: 245px;
+}
+
+.flip-container {
+  perspective: 1000px;
+  line-height: 45px;
+  font-weight: bold;
+}
+
+.flip-container.flip .flipper {
+  transform: rotateY(180deg);
+}
+
+.flip-container, 
+.front, 
+.back {
+  width: 100%;
+  height: 100%;
+}
+
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.front {
+  z-index: 2;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.form-box {
+  margin: 30px auto;
+  max-width: 400px;
+  padding: 20px;
+  border: 2px solid var(--tea);
+  background-color: #212529;
+  box-shadow: 0 0 40px var(--tea);
+}
+
+.form-box h2 {
+  text-align: center; 
+  color: white;
+}
+
+.form-box p, 
+.form-box label {
+  color: white;
+}
+
+.form-box a{ 
+  color: var(--pnk);
+}
+
+#log-in-btn {
+    background-color: #fc97d0;
+    border: 2px solid #fc97d0;
+    border-radius: 46px;
+    
+}
+
+#sign-up-btn {
+    background-color: #b187ff;
+    border: 1px solid #b187ff;
+    border-radius: 46px;
+}
+
+
+
+
+/* Media QUERIES */
+
+@media (max-width: 767px) {
+  .form-box{
+    max-width: 100%;
+    padding: 15px;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .form-box {
+    max-width: 80%;
+  }
+}
+
+@media (min-width: 992px) {
+  .form-box {
+    max-width: 400px;
+  }
+=======
 
 .login-navbar ul li a {
     text-decoration: none;

@@ -43,27 +43,61 @@
     </nav>
     <!-- end of navbar -->
 
-    <!-- WHAT"S THE VIBE CONTENT-->
-<div class="signInForm">
-    <h2 class="text-center">SIGN IN OR SIGN UP</h2>
-    <form>
-        <div class="form-group">
-            <label for="email">EMAIL:</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter email">
+<div class="login-container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="flip-container" id="flipContainer">
+                <div class="flipper">
+                    <div class="front">
+                        <div class="form-box">
+                            <h2>Login</h2>
+                            <form>
+                                <div class="form-group">
+                                    <label for="loginEmail">EMAIL:</label>
+                                    <input type="email" class="form-control" id="loginEmail" placeholder="Enter email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="loginPassword">PASSWORD:</label>
+                                    <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+                                </div>
+                                <button type="submit" class="btn btn-primary" id="log-in-btn">Login</button>
+                                <p class="text-center mt-3">Don't have an account?<a href="#" onclick="flipForm()">Sign Up</a></p>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <div class="form-box">
+                            <h2>Sign Up</h2>
+                            <form>
+                                <div class="form-group">
+                                    <label for="signupName">NAME:</label>
+                                    <input type="text" class="form-control" id="signupName" placeholder="Enter Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="signupEmail">EMAIL:</label>
+                                    <input type="email" class="form-control" id="signupEmail" placeholder="Enter email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="signupPassword">PASSWORD:</label>
+                                    <input type="password" class="form-control" id="signupPassword" placeholder="Password">
+                                </div>    
+                                <button type="submit" class="btn btn-primary" id="sign-up-btn">Sign Up</button>
+                                <p class="text-center mt-3">Already have an account?<a href="#" onclick="flipForm()">Login</a></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <div class="form-group">
-            <label for="password">PASSWORD:</label>
-            <input type="password" class="form-control" id="password" placeholder="Enter password">
-        </div>
-        <div class="text-center">
-            <button type="submit" id="sign-in-btn" class="btn btn-primary">SIGN IN</button>
-            <span class="mx-2">OR</span>
-            <button type="submit" id="sign-up-btn" class="btn btn-secondary">SIGN UP</button>
-        </div>
-    </form>
+    </div>
 </div>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="/login.js"></script>
+  
+
+
 </body>
 
 </html>
