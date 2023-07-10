@@ -33,6 +33,9 @@
 			  <li class="nav-item">
 				<a class="btn btn-primary" href="#video-outputs">History</a>
 			  </li>
+				<li class="nav-item">
+					<a class="btn btn-primary" href="#fav-container">Favorites</a>
+				</li>
 			</ul>
 			<div class="d-flex">
 			  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLogin">
@@ -49,6 +52,7 @@
 
 	<!-- end of navbar -->
 	<!-- Button trigger modal -->
+
 	<!-- Modal -->
 	<div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered modal-lg">
@@ -56,6 +60,7 @@
 				<div class="modal-header">
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
 				</div>
+
 				<div class="modal-body">
 
 					<div class="flip-container" id="flipContainer">
@@ -87,6 +92,7 @@
 													onclick="flipForm()">Sign Up</a></p>
 										</form>
 									</div>
+
 								</div>
 							</div>
 							<!-- back face of form -->
@@ -280,6 +286,95 @@
 			</div>
 		</div>
 	</div>
+
+      
+    <!-- end of content  -->
+		
+		<!-- Favorites container  -->
+		<div id="fav-container">
+			<div class="container-fluid">
+				<h2>Your Favorites</h2>
+				<div id="favoritesCarousel" class="carousel slide" data-bs-ride="carousel">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<div class="row justify-content-center" id="favoritesPlaylist">
+								<div class="col-md-4">
+									<div class="card">
+										<div class="card-body">
+											<h5 class="card-title">Video 1</h5>
+											<p class="card-text">Description </p>
+											<a href="https://www.youtube.com/watch?v=VIDEO_ID_1" class="btn btn-primary">Watch Video</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<div class="row justify-content-center">
+								<div class="col-md-4">
+									<div class="card">
+										<div class="card-body">
+											<h5 class="card-title">Video 2</h5>
+											<p class="card-text">Description of Video 2</p>
+											<a href="https://www.youtube.com/watch?v=VIDEO_ID_2" class="btn btn-primary">Watch Video</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<div class="row justify-content-center">
+								<div class="col-md-4">
+									<div class="card">
+										<div class="card-body">
+											<h5 class="card-title">Video 3</h5>
+											<p class="card-text">Description of Video 3</p>
+											<a href="https://www.youtube.com/watch?v=VIDEO_ID_2" class="btn btn-primary">Watch Video</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<div class="row justify-content-center">
+								<div class="col-md-4">
+									<div class="card">
+										<div class="card-body">
+											<h5 class="card-title">Video 4</h5>
+											<p class="card-text">Description of Video 4</p>
+											<a href="https://www.youtube.com/watch?v=VIDEO_ID_2" class="btn btn-primary">Watch Video</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="carousel-item">
+							<div class="row justify-content-center">
+								<div class="col-md-4">
+									<div class="card">
+										<div class="card-body">
+											<h5 class="card-title">Video 5</h5>
+											<p class="card-text">Description of Video 5</p>
+											<a href="https://www.youtube.com/watch?v=VIDEO_ID_2" class="btn btn-primary">Watch Video</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<button class="carousel-control-prev" type="button" data-bs-target="#favoritesCarousel" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#favoritesCarousel" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</div>
+			</div>
+		</div>
+    
+
 
 
 

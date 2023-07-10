@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAVORITES</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="./public/css/favs.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+  
+      <a class="navbar-brand" href="#">
+        <img src="./public/images/logo.png" alt="Logo" height="40">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse container-fluid" id="navbarNav" style="justify-content: space-between;">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="btn btn-primary" href="#main-container">Search</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-primary" href="#video-outputs">History</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-primary" href="#fav-container">Favorites</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-primary" href="#">About Us</a>
+          </li>
+        </ul>
+        </nav>
+        <!-- end of navbar  -->
+
+      <!-- Favorites container  -->
+      <div id="fav-container">
+        <div class="container-fluid">
+          <h2>Your Favorites</h2>
+            <div id="favoritesCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="row justify-content-center" id="favoritesPlaylist">
+                    <div class="col-md-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Video 1</h5>
+                          <p class="card-text">Description </p>
+                          <a href="https://www.youtube.com/watch?v=VIDEO_ID_1" class="btn btn-primary">Watch Video</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row justify-content-center">
+                    <div class="col-md-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Video 2</h5>
+                          <p class="card-text">Description of Video 2</p>
+                          <a href="https://www.youtube.com/watch?v=VIDEO_ID_2" class="btn btn-primary">Watch Video</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row justify-content-center">
+                    <div class="col-md-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Video 3</h5>
+                          <p class="card-text">Description of Video 3</p>
+                          <a href="https://www.youtube.com/watch?v=VIDEO_ID_2" class="btn btn-primary">Watch Video</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row justify-content-center">
+                    <div class="col-md-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Video 4</h5>
+                          <p class="card-text">Description of Video 4</p>
+                          <a href="https://www.youtube.com/watch?v=VIDEO_ID_2" class="btn btn-danger">Watch Video</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row justify-content-center">
+                    <div class="col-md-4">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Video 5</h5>
+                          <p class="card-text">Description of Video 5</p>
+                          <a href="https://www.youtube.com/watch?v=VIDEO_ID_2" class="btn btn-danger">Watch Video</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#favoritesCarousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#favoritesCarousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+        </div>
+      </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-qi1nUqy0LHchNeh1ex+6eLY1I4ifOBw7eL4IGDdc5LWuImOH0P3gTNzZGhsJ9dfD" crossorigin="anonymous"></script>
+</body>    
+</html>
