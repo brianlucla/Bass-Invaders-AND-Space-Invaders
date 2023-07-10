@@ -1,0 +1,9 @@
+body {
+    background-image: url('./public/images/alien.jpg')
+    center center no-repeat; 
+    padding: 240px 0 200px; 
+    width: 100%; 
+    background-size: cover;
+    font-family: 'DotGothic16', sans-serif;
+    font-weight: bold;
+}
