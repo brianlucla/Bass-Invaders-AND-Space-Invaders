@@ -1,10 +1,13 @@
 // needed for testing
-// require('path');
-// require('dotenv').config({path:__dirname+'/../../.env'});
+require('path');
+require('dotenv').config({path:__dirname+'/../../.env'});
 
 // uncomment later
 // const inputEl = document.getElementById('search-song');
 // const submitEl = document.getElementById('submit-song');
+
+// youtube search method: var ytApi = `${baseApiUrlY}/search?key=${apiKeyY}&part=snippet&q=${song and artist}&maxResults=1`;
+const baseApiUrlY = "https://www.googleapis.com/youtube/v3";
 
 const { Configuration, OpenAIApi } = require("openai");
 const configuration = new Configuration({
@@ -43,13 +46,17 @@ const giveSongs = async function () {
   
   for(let i = 0; i < slicedArraySplit.length; i++){
     const songArtist = (slicedArraySplit[i])[1].split('by');
+    const songTitle = songArtist[0].replace(/['"]+/g, "").slice(1,-1);
+    const artistName = songArtist[1].slice(1);
+    const youtubeURL = generateYoutubeURL();
     const songObject = {
-      songName: songArtist[0].replace(/['"]+/g, "").slice(1,-1),
-      artistName: songArtist[1].slice(1),
+      songName: songTitle,
+      artistName: artistName,
+      youtube_url: youtubeURL,
     };
     processedArray.push(songObject);
   }
-  
+  console.log('yay');
   return processedArray;
 };
 
@@ -73,6 +80,7 @@ const songsCreate = async function(array, result){
         song_title: array[i].songName,
         artist: array[i].artistName,
         playlist_id: result.id,
+        youtube_url:array[i].youtube_url,
       }),
       headers: {
         "Content-Type": "application/json",
@@ -81,3 +89,32 @@ const songsCreate = async function(array, result){
   }
 }
 
+const generateYoutubeURL = async function(songName, artistName){
+  const songSearchTerms = songName.split(' ');
+  const artistSearchTerms = artistName.split(' ');
+  const combinedSearchTerm = '';
+
+  for (let i = 0; i < songSearchTerms.length; i++){
+    combinedSearch+= `${songSearchTerms[i]}+`;
+  };
+
+  for(let j = 0; j < artistSearchTerms.length; j++){
+    if(j ===artistSearchTerms.length-1){
+      combinedSearch+=`${artistSearchTerms[j]}`;
+    } else {
+      combinedSearch += `${artistSearchTerms[j]}+`;
+    }
+  }
+
+  const apiURL = `${baseApiUrlY}/search?key=${process.env.YOUTUBE_KEY}&part=snippet&q=${combinedSearchTerm}&maxResults=1`;
+
+  await fetch(apiURL)
+    .then((response) => response.json)
+    .then((data) => {
+      console.log(`https://www.youtube.com/embed/${data.items[0].id.videoId}`);
+      return `https://www.youtube.com/embed/${data.items[0].id.videoId}`;
+    });
+}
+
+
+giveSongs();
