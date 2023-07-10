@@ -5,3 +5,4 @@ function flipForm() {
   flipContainer.classList.toggle("flip");
 }
 
+// favorites function

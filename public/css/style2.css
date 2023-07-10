@@ -3,6 +3,8 @@
 :root {
     --color1: #b187ff;
     --tea: #60e1c4;
+    --pnk: #fc97d0;
+
 
 }
 
@@ -176,12 +178,15 @@ h1 {
 }
 
 .form-box {
-    margin: 30px auto;
-    border: 2px solid var(--tea);
-    background-color: #212529;
-    box-shadow: 0 0 40px var(--tea);
-    padding: 20px;
-} 
+  margin: 30px auto;
+  max-width: 400px;
+  padding: 20px;
+  border: 2px solid var(--tea);
+  background-color: #212529;
+  box-shadow: 0 0 40px var(--tea);
+}
+
+
 
 .signInForm {
     color: white;
@@ -251,6 +256,8 @@ h1 {
 #password {
     margin-bottom: 15px;
 }
+
+
 
 
 
@@ -359,4 +366,86 @@ h1 {
     -moz-border-radius: 50px;
     -ms-border-radius: 50px;
     -o-border-radius: 50px;
+}
+/* Favorites container  */
+#fav-container {
+  position: relative;
+  padding: 50px 0;
+  background-image: url('https://images.unsplash.com/photo-1554290712-e640351074bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1072&q=80');
+  background-size: cover;
+  height: 700px;
+}
+
+#fav-container:before { 
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;  
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+#fav-container .container-fluid {
+  position:  relative;
+  z-index: 1;
+}
+
+#fav-container h2 {
+  text-align: center; 
+  margin-bottom: 20px;
+  color: white;
+}
+
+.carousel-inner {
+  margin-top: 20px;
+}
+
+carousel-item {
+  display: flex; 
+  justify-content: center;
+}
+
+.card {
+    background-color: rgba(136, 189, 190, 0.2);
+    backdrop-filter: blur(4px);
+    border: none;
+    color: white;
+    border: 3px solid var(--tea);
+    height: 500px;
+}
+
+#favoritesPlaylist {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+
+.card-title {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white;
+    text-align: center;
+}    
+
+.card-text {
+      margin-bottom: 10px;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      font-size: 40px;
+    }
+
+.card-body a {
+    color: white;
+}
+
+a.btn.btn-primary {
+    background-color: var(--pnk);
+    border-color: var(--pnk);
+    text-align: center;
 }
