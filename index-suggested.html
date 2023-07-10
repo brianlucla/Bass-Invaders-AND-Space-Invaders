@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BASS-INVADERS</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-  <link rel="stylesheet" href="./public/css/style2.css">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>BASS-INVADERS</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<link rel="stylesheet" href="./public/css/style2.css">
 </head>
+
 <body class="signedout">
 
   <!-- NAVBAR -->
@@ -38,186 +41,255 @@
 			  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLogin">
 				Log In / Sign Up
 			  </button>
+			  <button type="button" class="btn btn-primary">
+				Sign Out
+			  </button>
+
 			</div>
-		  </div>
-  
-	</div>
-  </nav>
-
-<!-- end of navbar -->
-
-<!-- Button trigger modal -->
-	<!-- Modal -->
-	<div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	  <div class="modal-dialog modal-dialog-centered modal-lg">
-		<div class="modal-content">
-		  <div class="modal-header">
-			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
-		  </div>
-		  <div class="modal-body">
-
-				<div class="flip-container" id="flipContainer">
-					<div class="flipper">
-						<!-- front face of form -->
-						<div class="front">
-							<div class="form-box">
-							<div class="signInForm">
-								<h2>SIGN IN OR SIGN UP</h2>
-								<form>
-									<div class="form-group">
-										<label for="email">EMAIL:</label>
-										<input type="email" class="form-control" id="email" placeholder="">
-									</div>
-									<div class="form-group">
-										<label for="password">PASSWORD:</label>
-										<input type="password" class="form-control" id="password" placeholder="">
-									</div>
-									<div class="form-button-actions">
-										<button type="submit" id="sign-in-btn" class="btn btn-primary">SIGN IN</button>
-										<span class="mx-2">OR</span>
-										<button type="submit" id="sign-up-btn" class="btn btn-primary">SIGN UP</button>
-									</div>
-									<!-- onclick should move when link is clicked  -->
-											<p class="text-center mt-3">Don't have an account?<a href="#" onclick="flipForm()">Sign Up</a></p>
-								</form>
-				</div>
-					</div>
-					</div>
-					<!-- back face of form -->
-					<div class="back">
-						<div class="form-box">
-							<h2>Sign Up</h2>
-							<form>
-								<div class="form-group">
-									<label for="signupName">NAME:</label>
-									<input type="text" class="form-control" id="signupName" placeholder="Enter Name">
-								</div>
-								<div class="form-group">
-									<label for="signupEmail">EMAIL:</label>
-									<input type="email" class="form-control" id="signupEmail" placeholder="Enter email">
-								</div>
-								<div class="form-group">
-									<label for="signupPassword">PASSWORD:</label>
-									<input type="password" class="form-control" id="signupPassword" placeholder="Password">
-								</div>
-								<button type="submit" class="btn btn-primary" id="log-in-btn">Sign Up</button>
-								<!-- onclick should flipped when link is clicked -->
-								<p class="text-center mt-3">Already have an account?<a href="#" onclick="flipForm()">Login</a></p>
-							</form>
-						</div>
-					</div>
-					</div>
-					</div>
-					</div>
 
 		</div>
-	  </div>
+	</nav>
+
+	<!-- end of navbar -->
+	<!-- Button trigger modal -->
+
+	<!-- Modal -->
+	<div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+				</div>
+
+				<div class="modal-body">
+
+					<div class="flip-container" id="flipContainer">
+						<div class="flipper">
+							<!-- front face of form -->
+							<div class="front">
+								<div class="form-box">
+									<div class="signInForm">
+										<h2>SIGN IN OR SIGN UP</h2>
+										<form>
+											<div class="form-group">
+												<label for="email">EMAIL:</label>
+												<input type="email" class="form-control" id="email" placeholder="">
+											</div>
+											<div class="form-group">
+												<label for="password">PASSWORD:</label>
+												<input type="password" class="form-control" id="password"
+													placeholder="">
+											</div>
+											<div class="form-button-actions">
+												<button type="submit" id="sign-in-btn" class="btn btn-primary">SIGN
+													IN</button>
+												<span class="mx-2">OR</span>
+												<button type="submit" id="sign-up-btn" class="btn btn-primary">SIGN
+													UP</button>
+											</div>
+											<!-- onclick should move when link is clicked  -->
+											<p class="text-center mt-3">Don't have an account?  <a href="#"
+													onclick="flipForm()">Sign Up</a></p>
+										</form>
+									</div>
+
+								</div>
+							</div>
+							<!-- back face of form -->
+							<!-- test -->
+							<div class="back">
+								<div class="form-box">
+									<h2>Sign Up</h2>
+									<form>
+										<div class="form-group">
+											<label for="signupName">NAME:</label>
+											<input type="text" class="form-control" id="signupName"
+												placeholder="Enter Name">
+										</div>
+										<div class="form-group">
+											<label for="signupEmail">EMAIL:</label>
+											<input type="email" class="form-control" id="signupEmail"
+												placeholder="Enter email">
+										</div>
+										<div class="form-group">
+											<label for="signupPassword">PASSWORD:</label>
+											<input type="password" class="form-control" id="signupPassword"
+												placeholder="Password">
+										</div>
+										<button type="submit" class="btn btn-primary" id="log-in-btn">Sign Up</button>
+										<!-- onclick should flipped when link is clicked -->
+										<p class="text-center mt-3">Already have an account?  <a href="#"
+												onclick="flipForm()">Login</a></p>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
 	</div>
-    <!-- Hero decription container -->
+	<!-- Hero decription container -->
 	<div id="hero">
 		<div class="wrapper">
 			<h1>Vibe your tunes.</h1>
-			<p>Input a vibe that you're feeling and we'll do the rest. Whether you're feeling energized or relaxed, 
+			<p>Input a vibe that you're feeling and we'll do the rest. Whether you're feeling energized or relaxed,
 				we'll find a few songs that match your vibe.</p>
 			<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLogin">
-			  Log In / Sign Up
+				Log In / Sign Up
 			</button>
 		</div>
 	</div>
 	<!--Main container-->
 	<div id="main-container">
-	<!--Search container-->
+		<!--Search container-->
 		<div class="search-container">
-		  <div class="search-box">
-			<div class="search-form">
-			  <input type="text" class="search-input form-control" placeholder="Search a song!...">
-			  <button type="submit" class="btn btn-primary">Search</button>
+			<div class="search-box">
+				<div class="search-form">
+					<input type="text" class="search-input form-control" placeholder="What's the mood / occassion?"
+						id="search-song">
+					<button type="submit" class="btn btn-primary" id="submit-song">Search</button>
+					<button type="submit" class="btn btn-primary" id="submit-song">&#129293;</button>
+				</div>
+				<div class="output-container"></div>
 			</div>
-			<div class="output-container"></div>
-		  </div>
 		</div>
-		
-		
+
+
 		<!--Is this where the history of searched songs goes?-->
 		<!-- VIDEO/PROMPT CONTAINER -->
 		<div id="video-outputs" class="">
 			<div class="wrapper">
 				<div class="box-left box-container">
 					<h2>What's the Vibe?</h2>
-					<div id="carouselRight" class="carousel slide" data-bs-ride="carousel" >
-					  <div class="carousel-indicators">
-						<button type="button" data-bs-target="#carouselRight" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-						<button type="button" data-bs-target="#carouselRight" data-bs-slide-to="1" aria-label="Slide 2"></button>
-						<button type="button" data-bs-target="#carouselRight" data-bs-slide-to="2" aria-label="Slide 3"></button>
-					  </div>
-					  <div class="carousel-inner">
-						<div class="carousel-item active">
-						  <div class="embed-responsive embed-responsive-16by9">
-						  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/YOUR_VIDEO_ID"></iframe>
+					<div id="carouselRight" class="carousel slide" data-bs-ride="carousel">
+						<div class="carousel-indicators">
+							<button type="button" data-bs-target="#carouselRight" data-bs-slide-to="0" class="active"
+								aria-current="true" aria-label="Slide 1"></button>
+							<button type="button" data-bs-target="#carouselRight" data-bs-slide-to="1"
+								aria-label="Slide 2"></button>
+							<button type="button" data-bs-target="#carouselRight" data-bs-slide-to="2"
+								aria-label="Slide 3"></button>
 						</div>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<div class="embed-responsive embed-responsive-16by9">
+									<iframe class="embed-responsive-item"
+										src="https://www.youtube.com/embed/YOUR_VIDEO_ID"></iframe>
+								</div>
+							</div>
+							<div class="carousel-item">
+								<div class="embed-responsive embed-responsive-16by9">
+									<iframe class="embed-responsive-item"
+										src="https://www.youtube.com/embed/YOUR_VIDEO_ID"></iframe>
+								</div>
+							</div>
+							<div class="carousel-item">
+								<div class="embed-responsive embed-responsive-16by9">
+									<iframe class="embed-responsive-item"
+										src="https://www.youtube.com/embed/YOUR_VIDEO_ID"></iframe>
+								</div>
+							</div>
 						</div>
-						<div class="carousel-item">
-						  <div class="embed-responsive embed-responsive-16by9">
-						  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/YOUR_VIDEO_ID"></iframe>
-						</div>
-						</div>
-						<div class="carousel-item">
-						  <div class="embed-responsive embed-responsive-16by9">
-						  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/YOUR_VIDEO_ID"></iframe>
-						</div>
-						</div>
-					  </div>
-					  <button class="carousel-control-prev" type="button" data-bs-target="#carouselRight" data-bs-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">Previous</span>
-					  </button>
-					  <button class="carousel-control-next" type="button" data-bs-target="#carouselRight" data-bs-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">Next</span>
-					  </button>
+						<button class="carousel-control-prev" type="button" data-bs-target="#carouselRight"
+							data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+						</button>
+						<button class="carousel-control-next" type="button" data-bs-target="#carouselRight"
+							data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Next</span>
+						</button>
 					</div>
 				</div>
 				<div class="box-right box-container">
 					<h2>Get pumped up!</h2>
-					<div id="carouselLeft" class="carousel slide" data-bs-ride="carousel" >
-					  <div class="carousel-indicators">
-						<button type="button" data-bs-target="#carouselLeft" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-						<button type="button" data-bs-target="#carouselLeft" data-bs-slide-to="1" aria-label="Slide 2"></button>
-						<button type="button" data-bs-target="#carouselLeft" data-bs-slide-to="2" aria-label="Slide 3"></button>
-					  </div>
-					  <div class="carousel-inner">
-						<div class="carousel-item active">
-						  <div class="embed-responsive embed-responsive-16by9">
-						  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/YOUR_VIDEO_ID"></iframe>
+					<div id="carouselLeft" class="carousel slide" data-bs-ride="carousel">
+						<div class="carousel-indicators">
+							<button type="button" data-bs-target="#carouselLeft" data-bs-slide-to="0" class="active"
+								aria-current="true" aria-label="Slide 1"></button>
+							<button type="button" data-bs-target="#carouselLeft" data-bs-slide-to="1"
+								aria-label="Slide 2"></button>
+							<button type="button" data-bs-target="#carouselLeft" data-bs-slide-to="2"
+								aria-label="Slide 3"></button>
 						</div>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<div class="embed-responsive embed-responsive-16by9">
+									<iframe class="embed-responsive-item"
+										src="https://www.youtube.com/embed/YOUR_VIDEO_ID"></iframe>
+								</div>
+							</div>
+							<div class="carousel-item">
+								<div class="embed-responsive embed-responsive-16by9">
+									<iframe class="embed-responsive-item"
+										src="https://www.youtube.com/embed/YOUR_VIDEO_ID"></iframe>
+								</div>
+							</div>
+							<div class="carousel-item">
+								<div class="embed-responsive embed-responsive-16by9">
+									<iframe class="embed-responsive-item"
+										src="https://www.youtube.com/embed/YOUR_VIDEO_ID"></iframe>
+								</div>
+							</div>
 						</div>
-						<div class="carousel-item">
-						  <div class="embed-responsive embed-responsive-16by9">
-						  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/YOUR_VIDEO_ID"></iframe>
-						</div>
-						</div>
-						<div class="carousel-item">
-						  <div class="embed-responsive embed-responsive-16by9">
-						  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/YOUR_VIDEO_ID"></iframe>
-						</div>
-						</div>
-					  </div>
-					  <button class="carousel-control-prev" type="button" data-bs-target="#carouselLeft" data-bs-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">Previous</span>
-					  </button>
-					  <button class="carousel-control-next" type="button" data-bs-target="#carouselLeft" data-bs-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">Next</span>
-					  </button>
+						<button class="carousel-control-prev" type="button" data-bs-target="#carouselLeft"
+							data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+						</button>
+						<button class="carousel-control-next" type="button" data-bs-target="#carouselLeft"
+							data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Next</span>
+						</button>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<!-- begin about us section -->
+
+	<!-- end about us section -->
+	<div #=aboutUs id="aboutUsBackground" style="background-image: url('./public/images/aboutUs8.avif');">
+		<div class="about-us-container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="about-us-box text-white">
+						<div class="card-body">
+							<h2>About Bass Invaders:</h2>
+							<br>
+							<p>Four coders, Merika Toby, Chelsea Pratte, Hannah Middleton and Brian Lu have teamed up to build and introduce users to a breathtaking fusion of music and technology! Our innovation combines multiple
+							restful
+							APIs, including
+							YouTube and ChatGPT, to bring you a personalized song search like never before. Experience the
+							thrill of finding perfect
+							tunes for your mood or activities, accompanied by captivating YouTube videos. And fear not, our
+							enchanting creation
+							ensures a seamless journey, with the whimsical presence of the Easter bunny to vanquish any
+							glitches. Prepare for an
+							extraordinary musical adventure, where every moment resonates with grandeur!</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="about-us-box text-white">
+						<div class="card-body">
+							<h2>The Coders:</h2>
+							<br>
+							<p><img id="teamphoto" src="./public/images/teamphoto.jpg" alt="Team Photo"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
       
     <!-- end of content  -->
-		<!-- Favorites container  -->
+		
 		<!-- Favorites container  -->
 		<div id="fav-container">
 			<div class="container-fluid">
@@ -303,10 +375,18 @@
 		</div>
     
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+	<!-- end of content  -->
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 	<script src="/login.js"></script>
 
-  
+
 </body>
+
 </html>

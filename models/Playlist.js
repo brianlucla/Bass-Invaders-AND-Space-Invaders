@@ -3,6 +3,8 @@ const sequelize = require('../config/index.js');
 
 class Playlist extends Model {}
 
+// random comment
+
 Playlist.init(
   {
     id:{
