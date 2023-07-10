@@ -98,6 +98,12 @@ h1 {
     margin-right: 20px;
 }
 
+/* Placeholder font size */
+.search-input::placeholder {
+  font-size: 18px; 
+}
+
+
 .output-container {
     width: 650px;
     padding: 5rem;
