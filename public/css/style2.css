@@ -2,6 +2,7 @@
 
 :root {
     --color1: #b187ff;
+    --tea: #60e1c4;
 }
 
 * {
@@ -132,6 +133,55 @@ h1 {
     font-weight: bold;
     margin-left: 245px;
 }
+
+/* flip container for login card inside model  */
+
+.flip-container {
+    perspective: 1000px;
+    color: white;
+}
+
+.flip-container.flip .flipper {
+    transform: rotateY(180deg);
+}
+
+.flip-container,
+.front, 
+.back {
+    width: 100%;
+    height: 100%;
+}
+
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.front,
+.back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.front {
+    z-index: 2;
+}
+
+.back{
+    transform: rotateY(180deg);
+}
+
+.form-box {
+    margin: 30px auto;
+    border: 2px solid var(--tea);
+    background-color: #212529;
+    box-shadow: 0 0 40px var(--tea);
+    padding: 20px;
+} 
+
 
 .signInForm {
     color: white;
