@@ -1,9 +1,14 @@
+// needed for testing
+// require('path');
+// require('dotenv').config({path:__dirname+'/../../.env'});
+
+// uncomment later
 // const inputEl = document.getElementById('search-song');
 // const submitEl = document.getElementById('submit-song');
 
 const { Configuration, OpenAIApi } = require("openai");
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: process.env.OPENAI_KEY,
 });
 const openai = new OpenAIApi(configuration);
 
@@ -44,30 +49,35 @@ const giveSongs = async function () {
     };
     processedArray.push(songObject);
   }
+  
   return processedArray;
 };
 
-const playlistSongCreate = async function(){
+const playlistCreate = async function(){
   const songArray = await giveSongs();
   const playlistResponse = await fetch("/api/playlist", {
     method: "POST",
     headers:{
       'Content-Type':'application/json',
     }
-  }).then((result)=>{
-    for (let i = 0; i < songArray.length; i++){
-      const songResponse = await fetch('/api/song', {
-        method:'POST',
-        body:JSON.stringify({
-          song_title: songArray[i].songName,
-          artist: songArray[i].artistName,
-          playlist_id: result.id,
-        }),
-        headers:{
-          'Content-Type':'application/json'
-        }
-      });
-    }
+  }).then((songArray, result)=>{
+    songsCreate();
   });
+}
+
+const songsCreate = async function(array, result){
+  for (let i = 0; i < array.length; i++) {
+    const songResponse = fetch("/api/song", {
+      method: "POST",
+      body: JSON.stringify({
+        song_title: array[i].songName,
+        artist: array[i].artistName,
+        playlist_id: result.id,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  }
 }
 
