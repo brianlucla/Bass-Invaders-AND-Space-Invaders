@@ -3,6 +3,7 @@
 :root {
     --color1: #b187ff;
     --tea: #60e1c4;
+
 }
 
 * {
@@ -181,7 +182,6 @@ h1 {
     box-shadow: 0 0 40px var(--tea);
     padding: 20px;
 } 
-
 
 .signInForm {
     color: white;
