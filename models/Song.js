@@ -34,7 +34,7 @@ Song.init(
   {
     sequelize,
     timestamps: false,
-    modelName: "user",
+    modelName: "song",
     freezeTableName:true,
   }
 );

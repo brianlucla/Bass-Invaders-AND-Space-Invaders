@@ -6,38 +6,42 @@ router.post("/", async (req, res) => {
   try {
     const playlistData = await Playlist.create();
     //response
+    res.json(playlistData);
   } catch (error) {
     res.status(500).json(error);
   }
 });
 
 router.put("/", async (req, res) => {
-    try {
-      const playlistData = await Playlist.update({
-        where:{
-          id:req.body.id,
-        },
-        favorite:true,
-      });
-
-      //response
-    } catch (error) {
-        res.status(500).json(error);
-    }
-});
-
-router.delete('/', async(req, res)=>{
   try {
-    const playlistData = await Playlist.destroy({
-      where:{
-        id:req.body.id,
+    const playlistData = await Playlist.update(
+      { favorite: true },
+      {
+        where: {
+          id: req.body.id,
+        },
       }
-    });
+    );
+    res.json(playlistData);
     //response
   } catch (error) {
-    
+    res.status(500).json(error);
   }
-})
+});
+
+router.delete("/", async (req, res) => {
+  try {
+    const playlistData = await Playlist.destroy({
+      where: {
+        id: req.body.id,
+      },
+    });
+    //response
+    res.json(playlistData);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
 
 // router.get("/favorites", async (req, res) => {
 //   // find all
@@ -56,7 +60,6 @@ router.delete('/', async(req, res)=>{
 //   }
 // });
 
-
 // router.get("/history", async (req, res) => {
 //   try {
 //     const playlistData = await Playlist.findAll({
@@ -66,7 +69,7 @@ router.delete('/', async(req, res)=>{
 //     const songs = playlistData.map((song) =>{
 //         song.get({plain:true});
 //     });
-//     res.render('history', { songs }); 
+//     res.render('history', { songs });
 //   } catch (error) {
 //     res.status(500).json(error);
 //   }
