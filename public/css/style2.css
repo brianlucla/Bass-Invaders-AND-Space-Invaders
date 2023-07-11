@@ -248,6 +248,21 @@ h1 {
     color: #ffffff !important;
     }
 
+.error-button {
+    border: solid 2px #b187ff;
+    background: #b187ff;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 46px;
+    margin: 5px;
+    -webkit-border-radius: 46px;
+    -moz-border-radius: 46px;
+    -ms-border-radius: 46px;
+    -o-border-radius: 46px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    }
+
 .modal-content { 
     background-color: #212529 !important;
 }
