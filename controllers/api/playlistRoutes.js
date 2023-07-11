@@ -1,10 +1,13 @@
 const router = require("express").Router();
 const { Playlist, Song } = require("../../models");
+const withAuth = require('../../helpers/auth');
 
-router.post("/", async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
   // create playlist
   try {
-    const playlistData = await Playlist.create();
+    const playlistData = await Playlist.create({
+      userId: req.session.userId,
+    });
     //response
     res.json(playlistData);
   } catch (error) {
@@ -12,7 +15,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.put("/", async (req, res) => {
+router.put("/", withAuth, async (req, res) => {
   try {
     const playlistData = await Playlist.update(
       { favorite: true },
@@ -29,7 +32,7 @@ router.put("/", async (req, res) => {
   }
 });
 
-router.delete("/", async (req, res) => {
+router.delete("/", withAuth, async (req, res) => {
   try {
     const playlistData = await Playlist.destroy({
       where: {

@@ -7,10 +7,6 @@ Playlist.hasMany(Song, {
   onDelete:'CASCADE',
 });
 
-Song.belongsToMany(Playlist,{
-  through:'playlist_id',
-});
-
 Playlist.belongsTo(User, {
   foreignKey:'userId',
   onDelete:"CASCADE",
