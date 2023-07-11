@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const { Playlist, Song } = require('../models');
+const withAuth = require('../helpers/auth');
 
-router.get("/", async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   try {
     const playlistData = await Playlist.findAll({
       where:{ userId: req.session.userId },
