@@ -21,6 +21,24 @@ body {
     background-size: cover;
     position: relative;
 }
+/* Error-page with space invaders background*/
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+#error-page {
+    background-image: url('../images/space-invaders.svg');
+    background-color: black;
+    background-repeat: repeat;
+    background-position: center center;
+    background-size: 200px 200px;
+    animation: backgroundAnimation 30s linear infinite;
+    -webkit-animation: backgroundAnimation 30s linear infinite;
+    font-family: 'DotGothic16', sans-serif;
+}
+
+
 .navbar {
     margin: auto;
     padding: 15px 0;
@@ -483,6 +501,26 @@ carousel-item {
     height: 500px;
 }
 
+.error-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.error-card {
+    background-color: rgba(136, 189, 190, 0.2);
+    backdrop-filter: blur(4px);
+    border: none;
+    color: white;
+    border: 3px solid var(--tea);
+    height: 50%;
+    width: 50%;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+
 #favoritesPlaylist {
       display: flex;
       flex-wrap: wrap;
@@ -498,6 +536,7 @@ carousel-item {
     color: white;
     text-align: center;
 }    
+
 
 .card-text {
       margin-bottom: 10px;
