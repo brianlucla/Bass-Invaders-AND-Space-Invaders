@@ -1,0 +1,128 @@
+/* front-end styling goes here... */
+
+:root {
+    --color1: #402090;
+    --black: #212529;
+    --purple: ##b187ff;
+    --pnk: #fc97d0;
+    --tea: #60e1c4;
+
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1554290712-e640351074bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1072&q=80');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.navbar {
+    margin: auto;
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+}
+
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+#fav-container {
+  position: relative;
+  padding: 50px 0;
+  background-image: url('https://images.unsplash.com/photo-1554290712-e640351074bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1072&q=80');
+  background-size: cover;
+}
+
+#fav-container:before { 
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;  
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+#fav-container .container-fluid {
+  position:  relative;
+  z-index: 1;
+}
+
+#fav-container h2 {
+  text-align: center; 
+  margin-bottom: 20px;
+  color: white;
+}
+
+
+.carousel-inner {
+  margin-top: 20px;
+}
+
+carousel-item {
+  display: flex; 
+  justify-content: center;
+}
+
+#favoritesPlaylist {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: rgba(136, 189, 190, 0.2);
+      backdrop-filter: blur(4px);
+      border: none;
+      color: white;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: white;
+      text-align: center;
+    }
+
+    .card-text {
+      margin-bottom: 10px;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .card-body a {
+      color: white;
+    }
+
+    .btn-primary {
+      background-color: #b187ff;
+      border-color: #b187ff;
+    }
+
+#button {
+  background-color: var(--tea);
+    border: 1px solid var(--tea);
+    border-radius: 46px;
+    text-align: center;
+}

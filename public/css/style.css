@@ -219,29 +219,6 @@ h1 {
     border-radius: 46px;
 }
 
-
-
-
-/* Media QUERIES */
-
-@media (max-width: 767px) {
-  .form-box{
-    max-width: 100%;
-    padding: 15px;
-  }
-}
-@media (min-width: 768px) and (max-width: 992px) {
-  .form-box {
-    max-width: 80%;
-  }
-}
-
-@media (min-width: 992px) {
-  .form-box {
-    max-width: 400px;
-  }
-=======
-
 .login-navbar ul li a {
     text-decoration: none;
     color: white;
@@ -301,3 +278,38 @@ h1 {
     -ms-border-radius: 50px;
     -o-border-radius: 50px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media QUERIES */
+
+@media (max-width: 767px) {
+  .form-box{
+    max-width: 100%;
+    padding: 15px;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .form-box {
+    max-width: 80%;
+  }
+}
+
+@media (min-width: 992px) {
+  .form-box {
+    max-width: 400px;
+  }
