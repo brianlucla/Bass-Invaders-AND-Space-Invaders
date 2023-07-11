@@ -1,18 +1,24 @@
-const router = require('express').Router();
-const { Playlist, Song } = require('../models');
+const router = require("express").Router();
+const { User, Playlist, Song } = require("../models");
 
-router.get("/favorites", async (req, res) => {
+router.get("/", async (req, res) => {
   // find all
+  console.log("hello");
   try {
     const favoritesData = await Playlist.findAll({
-      raw: true,
-      where: { favorite: true },
+      where: { 
+        favorite: true, 
+        userId: req.session.userId, 
+      },
       include: [Song],
     });
-    const favorites = favoritesData.map((favorite) => {
-      favorite.get({ plain: true });
-    });
-    res.render("favorites", { favorites });
+    console.log("User Id: ", req.session.userId);
+    console.log("Favorites: ", favoritesData);
+    res.json(favoritesData);
+    // const favorites = favoritesData.map((favorite) => {
+    //   favorite.get({ plain: true });
+    // });
+    // res.render("favorites", { favorites });
   } catch (error) {
     res.status(500).json(error);
   }
