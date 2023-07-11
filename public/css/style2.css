@@ -315,16 +315,15 @@ h1 {
 
 /* password strength  */
 /* 
-.container .strenghtMeter {
-    position: absolute;
-    left: 0;
+.container .strengthMeter {
+    position: relative;
     bottom: 0;
     width: 100%;
     height: 3px;
     background-color: #222;
 }
 
-.container .strenghtMeter::before {
+.container .strengthMeter::before {
     content: "";
     position: absolute;
     width: 0;
@@ -333,25 +332,25 @@ h1 {
     background: #f00;
 }
 
-.container.weak .strenghtMeter::before {
+.container.weak .strengthMeter::before {
     width:10%;
     background: #f00;
     filter: drop-shadow(0 0 5px #f00) drop-shadow(0 0 10px #f00) drop-shadow(0 0 20px #f00);
 }
 
-.container.moderate .strenghtMeter::before {
+.container.moderate .strengthMeter::before {
     width: 70%;
     background: #eedc3d;
     filter: drop-shadow(0 0 5px #eedc3d) drop-shadow(0 0 10px #eedc3d) drop-shadow(0 0 20px #eedc3d);
 }
 
-.container.strong .strenghtMeter::before {
+.container.strong .strengthMeter::before {
     width: 100%;
     background: #18e605;
     filter: drop-shadow(0 0 5px #18e605) drop-shadow(0 0 10px #18e605) drop-shadow(0 0 20px #18e605);
 }
 
-.container .strenghtMeter::after {
+.container .strengthMeter::after {
     position: absolute;
     top: -45px;
     left: 30px;
@@ -359,19 +358,19 @@ h1 {
     color: aliceblue;
 }
 
-.container.container.weak .strenghtMeter::after {
+.container.container.weak .strengthMeter::after {
     content: "Weak Password";
     color: #f00;
     filter: drop-shadow(0 0 5px #f00);
 }
 
-.container.container.container.moderate .strenghtMeter::after {
+.container.container.container.moderate .strengthMeter::after {
     content: "Moderate Password";
     color: #eedc3d;
     filter: drop-shadow(0 0 5px #eedc3d);
 }
 
-.container.container.container.container.strong .strenghtMeter::after {
+.container.container.container.container.strong .strengthMeter::after {
     content: "Strong Password";
     color: #18e605;
     filter: drop-shadow(0 0 5px #18e605);
@@ -536,9 +535,9 @@ h1 {
 .about-us-box {
     color: white;
     margin: 20px;
-    border: 2px solid var(--color1);
+    border: 2px solid var(--tea);
     background-color: rgba(59, 125, 129, 0.7); /* Background color with 80% transparency */
-    box-shadow: 0 0 20px var(--color1);
+    box-shadow: 0 0 20px var(--pnk);
     padding: 50px;
     text-align: center;
     line-height: 35px;
@@ -548,12 +547,12 @@ h1 {
 
 #teamphoto {
     max-height: 375px;
-    border: 2px solid var(--color1);
-    box-shadow: 0 0 20px var(--color1);
+    border: 2px solid var(--tea);
+    box-shadow: 0 0 20px var(--tea);
     display: block;
     margin: 0 auto;
     margin-top: 10%;
-    border: 3px solid var(--color1);
+    border: 3px solid var(--tea);
     border-radius: 50px;
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
