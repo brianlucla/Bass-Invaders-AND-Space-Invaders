@@ -1,9 +1,11 @@
 /* front-end styling goes here... */
 
 :root {
-    --color1: #b187ff;
-    --tea: #60e1c4;
+    --color1: #402090;
+    --black: #212529;
+    --purple: ##b187ff;
     --pnk: #fc97d0;
+    --tea: #60e1c4;
     --teal2: #27628a;
 
 }
@@ -21,6 +23,7 @@ body {
     background-size: cover;
     position: relative;
 }
+
 /* Error-page with space invaders background*/
 @keyframes backgroundAnimation {
     0% { background-position: 0% 0%; }
@@ -37,6 +40,7 @@ body {
     -webkit-animation: backgroundAnimation 30s linear infinite;
     font-family: 'DotGothic16', sans-serif;
 }
+
 
 
 .navbar {
@@ -64,6 +68,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    
 }
 .box {
     width: 300px;
@@ -82,8 +87,10 @@ body {
 h1 {
     font-size: 24px;
     textalign: center;
-    margin-bottome: 10px;
+    margin-bottom: 10px;
 }
+
+/* ----- SEARCH CONTAINER----- */
 
 .search-box {
     width: 700px;
@@ -96,6 +103,7 @@ h1 {
     -o-border-radius: 10px;
     background-color: #212529;
     border-bottom-width: 1px;
+    box-shadow: 20px 30px 70px var(--pnk);
 }
 
 .search-container {
@@ -205,10 +213,8 @@ h1 {
   padding: 20px;
   border: 2px solid var(--tea);
   background-color: #212529;
-  box-shadow: 0 0 40px var(--tea);
+  box-shadow: 0px 30px 70px var(--tea);
 }
-
-
 
 .signInForm {
     color: white;
@@ -235,43 +241,50 @@ h1 {
     border-radius: 46px !important;
     margin: 5px !important;
 }
+
 .btn-primary:hover {
     background: #212529 !important;
     border: solid 2px #ffffff !important;
     color: #ffffff !important;
-}
+    }
 
-.modal-content {
+.modal-content { 
     background-color: #212529 !important;
 }
-.btn-close,
-.modal .close {
-    --bs-btn-close-color: #ffffff !important;
-    color: #ffffff !important;
+
+.btn-close, .modal .close {  
+    --bs-btn-close-color: #ffffff !important; 
+    color: #ffffff !important; 
 }
-.modal .modal-header {
+
+.modal .modal-header {        
     border-bottom: 0;
-    padding-bottom: 0;
+    padding-bottom: 0; 
 }
+
 .modal .btn-close {
     background: none;
     color: #ffffff;
     font-family: arial, sans-serif;
-    font-weight: bold;
+    font-weight: bold; 
 }
 
-.form-group {
+.form-group { 
+    padding-top: 20px;
+ }
+
+.form-group label { 
+    font-weight: bold; 
+}
+
+.form-button-actions { 
     padding-top: 20px;
 }
-.form-group label {
-    font-weight: bold;
+
+.form-button-actions button { 
+    font-weight: bold; 
 }
-.form-button-actions {
-    padding-top: 20px;
-}
-.form-button-actions button {
-    font-weight: bold;
-}
+
 #sign-in-btn {
     background-color: var(--color1);
     padding: 15px 30px !important;
@@ -282,10 +295,11 @@ h1 {
     border: solid 2px #fc97d0 !important;
     padding: 15px 30px !important;
 }
-#sign-up-btn:hover {
-    background: #212529 !important;
-    border: solid 2px #ffffff !important;
-    color: #ffffff !important;
+
+#sign-up-btn:hover{
+		background: #212529 !important;
+		border: solid 2px #ffffff !important;
+		color: #ffffff !important;
 }
 
 .form-control {
@@ -299,41 +313,127 @@ h1 {
     margin-bottom: 15px;
 }
 
+/* password strength  */
+/* 
+.container .strenghtMeter {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #222;
+}
+
+.container .strenghtMeter::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    transition: 0.5s;
+    background: #f00;
+}
+
+.container.weak .strenghtMeter::before {
+    width:10%;
+    background: #f00;
+    filter: drop-shadow(0 0 5px #f00) drop-shadow(0 0 10px #f00) drop-shadow(0 0 20px #f00);
+}
+
+.container.moderate .strenghtMeter::before {
+    width: 70%;
+    background: #eedc3d;
+    filter: drop-shadow(0 0 5px #eedc3d) drop-shadow(0 0 10px #eedc3d) drop-shadow(0 0 20px #eedc3d);
+}
+
+.container.strong .strenghtMeter::before {
+    width: 100%;
+    background: #18e605;
+    filter: drop-shadow(0 0 5px #18e605) drop-shadow(0 0 10px #18e605) drop-shadow(0 0 20px #18e605);
+}
+
+.container .strenghtMeter::after {
+    position: absolute;
+    top: -45px;
+    left: 30px;
+    transition: 0.5s;
+    color: aliceblue;
+}
+
+.container.container.weak .strenghtMeter::after {
+    content: "Weak Password";
+    color: #f00;
+    filter: drop-shadow(0 0 5px #f00);
+}
+
+.container.container.container.moderate .strenghtMeter::after {
+    content: "Moderate Password";
+    color: #eedc3d;
+    filter: drop-shadow(0 0 5px #eedc3d);
+}
+
+.container.container.container.container.strong .strenghtMeter::after {
+    content: "Strong Password";
+    color: #18e605;
+    filter: drop-shadow(0 0 5px #18e605);
+}
+
+.show {
+    position:absolute;
+    top: 0;
+    right:0;
+    height: 100%;
+    border: 6px solid #222;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.show::before {
+    content: "Show";
+    font-size: 0.6em;
+    color: aliceblue;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.show.hide::before {
+    content: "Hide";
+} */
+
 
 /* ----------------- HERO SECTION  --------------- */
 
-#hero {
+#hero { 
     background: url(../images/bg-Hero.jpg) center center no-repeat;
-    padding: 240px 0 200px;
-    width: 100%;
+    padding: 240px 0 200px; width: 100%;
     background-size: cover;
 }
+
 .wrapper {
-    max-width: 1000px;
-    text-align: center;
-    margin: 0 auto;
-}
-#hero h1 {
-    color: #ffffff;
-    font-family: arial, sans-serif;
-    font-size: 100px;
-    line-height: 76px;
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-}
-#hero p {
-    color: #ffffff;
-    padding-top: 36px;
-    font-size: 32px;
-    line-height: 1.3em;
+     max-width: 1000px; text-align: center; 
+     margin: 0 auto; 
 }
 
-#hero .wrapper button {
-    margin-top: 30px;
-    font-size: 24px;
-    font-weight: bold;
-    padding: 20px 40px !important;
+#hero h1 { 
+    color: #ffffff;
+    font-family: arial, sans-serif;
+    font-size: 100px; line-height: 76px; 
+    margin: 0; 
+    padding: 0; 
+    font-weight: bold; 
+}
+
+#hero p {
+     color: #ffffff; padding-top: 36px; font-size: 32px; line-height: 1.3em; 
+}
+		
+#hero .wrapper button { 
+    margin-top: 30px; 
+    font-size: 24px; 
+    font-weight: bold; 
+    padding: 20px 40px !important; 
+    box-shadow: 0 0 90px var(--tea);
 }
 
 @media (max-width: 1200px) {
@@ -360,6 +460,9 @@ h1 {
     display: none;
 }
 
+
+
+
 /* ----------------- MAIN CONTAINER  --------------- */
 
 #main-container {
@@ -380,37 +483,42 @@ h1 {
     width: 100%;
     padding: 100px 0 200px 0;
 }
-#video-outputs .wrapper {
+
+#video-outputs .wrapper { 
     max-width: 1600px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: auto;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    height: auto; 
 }
+
 #video-outputs .box-container {
     width: 47%;
     background: #1b1b1b;
     padding: 50px;
     color: #ffffff;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
+    border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -ms-border-radius: 10px ;
+    -o-border-radius: 10px ;
+     box-shadow: 20px 25px 90px var(--pnk);    
 }
-#video-outputs h2 {
-    text-align: left;
-    font-size: 40px;
+#video-outputs h2 { 
+    text-align: left; 
+    font-size: 40px; 
     line-height: 48px;
-    font-weight: bold;
-    color: #e76fc9;
-    padding-bottom: 32px;
+    font-weight: bold; 
+    color: #e76fc9; 
+    padding-bottom: 32px; 
 }
-#video-outputs iframe {
-    width: 100%;
-    aspect-ratio: 2 / 1;
+	
+#video-outputs iframe { 
+    width: 100%; 
+    aspect-ratio: 2 / 1; 
 }
 
+/* ----MEDIA QUERIES---- */
 @media (max-width: 1600px) {
     #video-outputs .wrapper {
         width: 90%;
@@ -452,7 +560,9 @@ h1 {
     -ms-border-radius: 50px;
     -o-border-radius: 50px;
 }
-/* Favorites container  */
+
+/* ------------------Favorites container -------------- */
+
 #fav-container {
   position: relative;
   padding: 50px 0;
@@ -544,6 +654,7 @@ carousel-item {
       font-weight: bold;
       text-align: center;
       font-size: 40px;
+      flex-wrap: wrap;
     }
 
 .card-body a {
@@ -551,9 +662,12 @@ carousel-item {
 }
 
 a.btn.btn-primary {
-    background-color: var(--pnk);
-    border-color: var(--pnk);
+    /* background-color: var(--pnk);
+    border-color: var(--pnk); */
     text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
 }
 
 }

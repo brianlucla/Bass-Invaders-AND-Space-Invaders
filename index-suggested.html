@@ -63,67 +63,59 @@
 
 				<div class="modal-body">
 
-					<div class="flip-container" id="flipContainer">
-						<div class="flipper">
-							<!-- front face of form -->
-							<div class="front">
-								<div class="form-box">
-									<div class="signInForm">
-										<h2>SIGN IN OR SIGN UP</h2>
-										<form>
-											<div class="form-group">
-												<label for="email">EMAIL:</label>
-												<input type="email" class="form-control" id="email" placeholder="">
-											</div>
-											<div class="form-group">
-												<label for="password">PASSWORD:</label>
-												<input type="password" class="form-control" id="password"
-													placeholder="">
-											</div>
-											<div class="form-button-actions">
-												<button type="submit" id="sign-in-btn" class="btn btn-primary">SIGN
-													IN</button>
-												<span class="mx-2">OR</span>
-												<button type="submit" id="sign-up-btn" class="btn btn-primary">SIGN
-													UP</button>
-											</div>
-											<!-- onclick should move when link is clicked  -->
-											<p class="text-center mt-3">Don't have an account?  <a href="#"
-													onclick="flipForm()">Sign Up</a></p>
-										</form>
+				<div class="flip-container" id="flipContainer">
+					<div class="flipper">
+						<!-- front face of form -->
+						<div class="front">
+							<div class="form-box">
+							<div class="signInForm">
+								<h2>SIGN IN OR SIGN UP</h2>
+								<form>
+									<div class="form-group">
+										<label for="email">EMAIL:</label>
+										<input type="email" class="form-control" id="email" placeholder="Enter Email">
 									</div>
-
+									<div class="form-group">
+										<label for="password">PASSWORD:</label>
+										<input type="password" class="form-control" id="password" placeholder="Enter Password">
+									</div>
+									<div class="form-button-actions">
+										<button type="submit" id="sign-in-btn" class="btn btn-primary">SIGN IN</button>
+										<span class="mx-2">OR</span>
+										<button type="submit" id="sign-up-btn" class="btn btn-primary">SIGN UP</button>
+									</div>
+									<!-- onclick should move when link is clicked  -->
+											<p class="text-center mt-3">Don't have an account?<a href="#" onclick="flipForm()">Sign Up</a></p>
+								</form>
+				</div>
+					</div>
+					</div>
+					<!-- back face of form -->
+					<div class="back">
+						<div class="form-box">
+							<h2>Sign Up</h2>
+							<form>
+								<div class="form-group">
+									<label for="signupName">NAME:</label>
+									<input type="text" class="form-control" id="signupName" placeholder="Enter Name">
 								</div>
-							</div>
-							<!-- back face of form -->
-							<!-- test -->
-							<div class="back">
-								<div class="form-box">
-									<h2>Sign Up</h2>
-									<form>
-										<div class="form-group">
-											<label for="signupName">NAME:</label>
-											<input type="text" class="form-control" id="signupName"
-												placeholder="Enter Name">
-										</div>
-										<div class="form-group">
-											<label for="signupEmail">EMAIL:</label>
-											<input type="email" class="form-control" id="signupEmail"
-												placeholder="Enter email">
-										</div>
-										<div class="form-group">
-											<label for="signupPassword">PASSWORD:</label>
-											<input type="password" class="form-control" id="signupPassword"
-												placeholder="Password">
-										</div>
-										<button type="submit" class="btn btn-primary" id="log-in-btn">Sign Up</button>
-										<!-- onclick should flipped when link is clicked -->
-										<p class="text-center mt-3">Already have an account?  <a href="#"
-												onclick="flipForm()">Login</a></p>
-									</form>
+								<div class="form-group">
+									<label for="signupEmail">EMAIL:</label>
+									<input type="email" class="form-control" id="signupEmail" placeholder="Enter email">
 								</div>
-							</div>
+								<div class="form-group">
+									<label for="signupPassword">PASSWORD:</label>
+									<input type="password" class="form-control" id="signupPassword" placeholder="Password">
+									<div class="show"></div>
+									<div class="stregthMeter"></div>
+								</div>
+								<button type="submit" class="btn btn-primary" id="log-in-btn">Sign Up</button>
+								<!-- onclick should flipped when link is clicked -->
+								<p class="text-center mt-3">Already have an account?<a href="#" onclick="flipForm()">Login</a></p>
+							</form>
 						</div>
+					</div>
+					</div>
 					</div>
 				</div>
 
@@ -302,8 +294,8 @@
 									<div class="card">
 										<div class="card-body">
 											<h5 class="card-title">Video 1</h5>
-											<p class="card-text">Description </p>
-											<a href="https://www.youtube.com/watch?v=VIDEO_ID_1" class="btn btn-primary">Watch Video</a>
+											<p class="card-text">Description of Video 1</p>
+											<a href="https://www.youtube.com/watch?v=VIDEO_ID_1" class="btn btn-primary" id="fav-btn">Watch Video</a>
 										</div>
 									</div>
 								</div>
@@ -316,7 +308,7 @@
 										<div class="card-body">
 											<h5 class="card-title">Video 2</h5>
 											<p class="card-text">Description of Video 2</p>
-											<a href="https://www.youtube.com/watch?v=VIDEO_ID_2" class="btn btn-primary">Watch Video</a>
+											<a href="https://www.youtube.com/watch?v=VIDEO_ID_2" class="btn btn-primary" id="fav-btn">Watch Video</a>
 										</div>
 									</div>
 								</div>
@@ -329,7 +321,7 @@
 										<div class="card-body">
 											<h5 class="card-title">Video 3</h5>
 											<p class="card-text">Description of Video 3</p>
-											<a href="https://www.youtube.com/watch?v=VIDEO_ID_2" class="btn btn-primary">Watch Video</a>
+											<a href="https://www.youtube.com/watch?v=VIDEO_ID_2" class="btn btn-primary" id="fav-btn">Watch Video</a>
 										</div>
 									</div>
 								</div>
@@ -342,7 +334,7 @@
 										<div class="card-body">
 											<h5 class="card-title">Video 4</h5>
 											<p class="card-text">Description of Video 4</p>
-											<a href="https://www.youtube.com/watch?v=VIDEO_ID_2" class="btn btn-primary">Watch Video</a>
+											<a href="https://www.youtube.com/watch?v=VIDEO_ID_2" class="btn btn-primary" id="fav-btn">Watch Video</a>
 										</div>
 									</div>
 								</div>
@@ -355,7 +347,7 @@
 										<div class="card-body">
 											<h5 class="card-title">Video 5</h5>
 											<p class="card-text">Description of Video 5</p>
-											<a href="https://www.youtube.com/watch?v=VIDEO_ID_2" class="btn btn-primary">Watch Video</a>
+											<a href="https://www.youtube.com/watch?v=VIDEO_ID_2" class="btn btn-primary" id="fav-btn">Watch Video</a>
 										</div>
 									</div>
 								</div>
