@@ -6,18 +6,16 @@
 
 const inputEl = document.getElementById('search-song');
 const submitEl = document.getElementById('submit-song');
-const playlistEl = document.getElementById('single-playlist');
-const video1El = document.getElementById('video-1');
-const video2El = document.getElementById('video-2');
-const video3El = document.getElementById('video-3');
-const video4El = document.getElementById('video-4');
-const video5El = document.getElementById('video-5');
+
+
 
 const songHandler = async function (event) {
   event.preventDefault();
 
   // Create playlist/songs and add to songs to playlist
   const playlistSongCreator = await playlistCreate();
+
+  
 
   // render playlist and songs to page
 };
@@ -86,35 +84,7 @@ getFunction();
 
 // generates youtube url's for each song in playlist
 
-const generateYoutubeURL = async function (songName, artistName) {
-  const songSearchTerms = songName.split(" ");
-  const artistSearchTerms = artistName.split(" ");
-  let combinedSearchTerm = "";
 
-  for (let i = 0; i < songSearchTerms.length; i++) {
-    combinedSearchTerm += `${songSearchTerms[i]}+`;
-  }
-
-  for (let j = 0; j < artistSearchTerms.length; j++) {
-    if (j === artistSearchTerms.length - 1) {
-      combinedSearchTerm += `${artistSearchTerms[j]}`;
-    } else {
-      combinedSearchTerm += `${artistSearchTerms[j]}+`;
-    }
-  }
-
-  const apiURL = `${baseApiUrlY}/search?key=${process.env.YOUTUBE_KEY}&part=snippet&q=${combinedSearchTerm}&maxResults=1`;
-
-  console.log(apiURL);
-
-  fetch(apiURL)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data.items[0].id.videoId);
-      console.log(`https://www.youtube.com/embed/${data.items[0].id.videoId}`);
-      return `https://www.youtube.com/embed/${data.items[0].id.videoId}`;
-    });
-};
 
 submitEl.addEventListener('click', songHandler);``
 
