@@ -7,7 +7,7 @@
 const inputEl = document.getElementById('search-song');
 const submitEl = document.getElementById('submit-song');
 
-
+const baseApiUrlY = "https://www.googleapis.com/youtube/v3";
 
 const songHandler = async function (event) {
   event.preventDefault();
@@ -84,7 +84,35 @@ getFunction();
 
 // generates youtube url's for each song in playlist
 
+const generateYoutubeURL = async function (songName, artistName) {
+  const songSearchTerms = songName.split(" ");
+  const artistSearchTerms = artistName.split(" ");
+  let combinedSearchTerm = "";
 
+  for (let i = 0; i < songSearchTerms.length; i++) {
+    combinedSearchTerm += `${songSearchTerms[i]}+`;
+  }
+
+  for (let j = 0; j < artistSearchTerms.length; j++) {
+    if (j === artistSearchTerms.length - 1) {
+      combinedSearchTerm += `${artistSearchTerms[j]}`;
+    } else {
+      combinedSearchTerm += `${artistSearchTerms[j]}+`;
+    }
+  }
+
+submitEl.addEventListener('click', songHandler);``
+
+  console.log(apiURL);
+
+  fetch(apiURL)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data.items[0].id.videoId);
+      console.log(`https://www.youtube.com/embed/${data.items[0].id.videoId}`);
+      return `https://www.youtube.com/embed/${data.items[0].id.videoId}`;
+    });
+};
 
 submitEl.addEventListener('click', songHandler);``
 
