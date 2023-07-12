@@ -1,6 +1,8 @@
 // needed for testing
 // require('path');
 // require('dotenv').config({path:__dirname+'/../../.env'});
+// require('path');
+// require('dotenv').config({path:__dirname+'/../../.env'});
 
 const inputEl = document.getElementById('search-song');
 const submitEl = document.getElementById('submit-song');
@@ -11,43 +13,16 @@ const video3El = document.getElementById('video-3');
 const video4El = document.getElementById('video-4');
 const video5El = document.getElementById('video-5');
 
-
 const songHandler = async function (event) {
   event.preventDefault();
 
   // Create playlist/songs and add to songs to playlist
-  // const playlistSongCreator = await playlistCreate();
-  // console.log("this is what we're looking for",playlistSongCreator.id);
+  const playlistSongCreator = await playlistCreate();
 
-  // render
-  const getSong = await fetch(`/api/playlist/20`,{
-    method:'GET',
-    headers:{
-      'Content-Type':'application/json'
-    }
-  });
-
-  let i = 1;
-  const songData = await getSong.json();
-  const mappedArray = songData.songs.map((song)=>{
-    playlistEl.textContent += `\n
-    Song Title: ${song.song_title}\n
-    Artist: ${song.artist}\n
-    Youtube Link: ${song.youtube_url}
-    `;
-    console.log(i);
-    const videoEl = document.getElementById(`video-${i++}`);
-    
-    console.log(videoEl);
-    videoEl.setAttribute("src", `${song.youtube_url}`);
-    
-    
-  });
-
-
-  
-
+  // render playlist and songs to page
 };
+
+// returns array of song objects containing name, artist, and youtube link
 
 const playlistCreate = async function(){
   const playlistResponse = await fetch("/api/playlist", {
@@ -58,12 +33,90 @@ const playlistCreate = async function(){
     headers:{
       'Content-Type':'application/json',
     }
-    
   });
-  return playlistResponse.json();
+  // .then((result)=>{
+  //   console.log(result)
+  //   // songsCreate(array);
+  // });
 }
+
+const getFunction = async function(){
+  const response = await fetch('/api/playlist',{
+    method:"GET",
+    headers:{
+      'Content-Type':'application/json'
+    }
+  });
+
+  console.log(response)
+}
+
+getFunction();
+
+// creates song and adds to database
+
+// const songsCreate = async function(array, result){
+//   await fetch('/api/song/bulk', {
+//     method: 'POST',
+//     body: JSON.stringify({
+//       songs: array
+//     }),
+//     headers: {
+//       'Content-Type': 'application/json'
+//     }
+//   })
+
+//   return
+//   // for (let i = 0; i < array.length; i++) {
+//   //   const songResponse = fetch("/api/song", {
+//   //     method: "POST",
+//   //     body: JSON.stringify({
+//   //       song_title: array[i].songName,
+//   //       artist: array[i].artistName,
+//   //       playlist_id: result.id,
+//   //       youtube_url:array[i].youtube_url,
+//   //     }),
+//   //     headers: {
+//   //       "Content-Type": "application/json",
+//   //     },
+//   //   });
+//   // }
+// }
+
+
+// generates youtube url's for each song in playlist
+
+const generateYoutubeURL = async function (songName, artistName) {
+  const songSearchTerms = songName.split(" ");
+  const artistSearchTerms = artistName.split(" ");
+  let combinedSearchTerm = "";
+
+  for (let i = 0; i < songSearchTerms.length; i++) {
+    combinedSearchTerm += `${songSearchTerms[i]}+`;
+  }
+
+  for (let j = 0; j < artistSearchTerms.length; j++) {
+    if (j === artistSearchTerms.length - 1) {
+      combinedSearchTerm += `${artistSearchTerms[j]}`;
+    } else {
+      combinedSearchTerm += `${artistSearchTerms[j]}+`;
+    }
+  }
+
+  const apiURL = `${baseApiUrlY}/search?key=${process.env.YOUTUBE_KEY}&part=snippet&q=${combinedSearchTerm}&maxResults=1`;
+
+  console.log(apiURL);
+
+  fetch(apiURL)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data.items[0].id.videoId);
+      console.log(`https://www.youtube.com/embed/${data.items[0].id.videoId}`);
+      return `https://www.youtube.com/embed/${data.items[0].id.videoId}`;
+    });
+};
 
 submitEl.addEventListener('click', songHandler);``
 
-
+// giveSongs();
 
