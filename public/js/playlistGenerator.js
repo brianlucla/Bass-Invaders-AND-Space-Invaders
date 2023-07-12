@@ -4,21 +4,50 @@
 
 const inputEl = document.getElementById('search-song');
 const submitEl = document.getElementById('submit-song');
-
+const playlistEl = document.getElementById('single-playlist');
+const video1El = document.getElementById('video-1');
+const video2El = document.getElementById('video-2');
+const video3El = document.getElementById('video-3');
+const video4El = document.getElementById('video-4');
+const video5El = document.getElementById('video-5');
 
 
 const songHandler = async function (event) {
   event.preventDefault();
 
   // Create playlist/songs and add to songs to playlist
-  const playlistSongCreator = await playlistCreate();
+  // const playlistSongCreator = await playlistCreate();
+  // console.log("this is what we're looking for",playlistSongCreator.id);
+
+  // render
+  const getSong = await fetch(`/api/playlist/20`,{
+    method:'GET',
+    headers:{
+      'Content-Type':'application/json'
+    }
+  });
+
+  let i = 1;
+  const songData = await getSong.json();
+  const mappedArray = songData.songs.map((song)=>{
+    playlistEl.textContent += `\n
+    Song Title: ${song.song_title}\n
+    Artist: ${song.artist}\n
+    Youtube Link: ${song.youtube_url}
+    `;
+    console.log(i);
+    const videoEl = document.getElementById(`video-${i++}`);
+    
+    console.log(videoEl);
+    videoEl.setAttribute("src", `${song.youtube_url}`);
+    
+    
+  });
+
 
   
 
-  // render playlist and songs to page
 };
-
-// returns array of song objects containing name, artist, and youtube link
 
 const playlistCreate = async function(){
   const playlistResponse = await fetch("/api/playlist", {
@@ -29,62 +58,12 @@ const playlistCreate = async function(){
     headers:{
       'Content-Type':'application/json',
     }
+    
   });
-  // .then((result)=>{
-  //   console.log(result)
-  //   // songsCreate(array);
-  // });
+  return playlistResponse.json();
 }
-
-const getFunction = async function(){
-  const response = await fetch('/api/playlist',{
-    method:"GET",
-    headers:{
-      'Content-Type':'application/json'
-    }
-  });
-
-  console.log(response)
-}
-
-getFunction();
-
-// creates song and adds to database
-
-// const songsCreate = async function(array, result){
-//   await fetch('/api/song/bulk', {
-//     method: 'POST',
-//     body: JSON.stringify({
-//       songs: array
-//     }),
-//     headers: {
-//       'Content-Type': 'application/json'
-//     }
-//   })
-
-//   return
-//   // for (let i = 0; i < array.length; i++) {
-//   //   const songResponse = fetch("/api/song", {
-//   //     method: "POST",
-//   //     body: JSON.stringify({
-//   //       song_title: array[i].songName,
-//   //       artist: array[i].artistName,
-//   //       playlist_id: result.id,
-//   //       youtube_url:array[i].youtube_url,
-//   //     }),
-//   //     headers: {
-//   //       "Content-Type": "application/json",
-//   //     },
-//   //   });
-//   // }
-// }
-
-
-// generates youtube url's for each song in playlist
-
-
 
 submitEl.addEventListener('click', songHandler);``
 
-// giveSongs();
+
 
