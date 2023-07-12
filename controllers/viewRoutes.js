@@ -3,16 +3,12 @@ const { Playlist, Song } = require('../models')
 
 
 router.get('/', async (req, res) => {
-  // render playlist to page
+
   try {
-    const playlistData = Playlist.findOne({
-      where:{
-        id:req.body.id,
-      },
-      include:[Song],
-    });
+    // render favorites to page
+    res.render("home");
   } catch (error) {
-    
+    res.status(500).json(error);
   }
 });
 
