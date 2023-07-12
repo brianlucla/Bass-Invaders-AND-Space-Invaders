@@ -10,12 +10,14 @@ const baseApiUrlY = "https://www.googleapis.com/youtube/v3";
 
 router.get('/:id', async (req, res) => {
   try {
-    const playlistData = await Playlist.findByPk(req.params.id);
+    const playlistData = await Playlist.findByPk(req.params.id, {
+      include: [Song],
+    });
     res.json(playlistData);
   } catch(error){
     res.status(500).json(error);
   }
-})
+});
 
 router.post("/", async (req, res) => {
   // create playlist
@@ -30,7 +32,7 @@ router.post("/", async (req, res) => {
     const songData = Song.bulkCreate(songArray);
     
     //response
-    res.render('');
+    res.json(playlistData);
   } catch (error) {
     res.status(500).json(error);
   }
