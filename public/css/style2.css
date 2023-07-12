@@ -635,14 +635,16 @@ carousel-item {
 
 .error-card {
     background-color: rgba(136, 189, 190, 0.2);
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(20px);
     border: none;
     color: white;
     border: 3px solid var(--tea);
-    height: 50%;
-    width: 50%;
+    height: 50vh; /* Use relative unit vh (viewport height) */
+    width: 90%; /* Use relative unit % (percentage) */
+    max-width: 500px; /* Set a maximum width for larger screens */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
+    margin: 0 auto; /* Center the card horizontally */
 }
 
 
