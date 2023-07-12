@@ -7,24 +7,24 @@ class Playlist extends Model {}
 
 Playlist.init(
   {
-    id:{
-      type:DataTypes.INTEGER,
-      primaryKey:true,
-      autoIncrement:true,
-      allowNull:false,
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+      allowNull: false,
     },
-    favorite:{
+    favorite: {
       type: DataTypes.BOOLEAN,
-      allowNull:false,
-      defaultValue:false,
+      allowNull: false,
+      defaultValue: false,
     },
   },
   {
     sequelize,
     timestamps: false,
-    modelName: 'playlist',
-    freezeTableName:true,
+    modelName: "playlist",
+    freezeTableName: true,
   }
-  );
+);
 
 module.exports = Playlist;
