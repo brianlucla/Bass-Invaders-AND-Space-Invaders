@@ -104,7 +104,30 @@ const generateYoutubeURL = async function (songName, artistName) {
 submitEl.addEventListener('click', songHandler);``
 
   console.log(apiURL);
+const generateYoutubeURL = async function (songName, artistName) {
+  const songSearchTerms = songName.split(" ");
+  const artistSearchTerms = artistName.split(" ");
+  let combinedSearchTerm = "";
 
+<<<<<<< HEAD
+=======
+  for (let i = 0; i < songSearchTerms.length; i++) {
+    combinedSearchTerm += `${songSearchTerms[i]}+`;
+  }
+
+  for (let j = 0; j < artistSearchTerms.length; j++) {
+    if (j === artistSearchTerms.length - 1) {
+      combinedSearchTerm += `${artistSearchTerms[j]}`;
+    } else {
+      combinedSearchTerm += `${artistSearchTerms[j]}+`;
+    }
+  }
+
+submitEl.addEventListener('click', songHandler);``
+
+  console.log(apiURL);
+
+>>>>>>> 6a7a880 (changes to routes and public js)
   fetch(apiURL)
     .then((response) => response.json())
     .then((data) => {
