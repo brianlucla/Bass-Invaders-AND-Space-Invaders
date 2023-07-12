@@ -3,7 +3,10 @@ const { Playlist, Song } = require('../models')
 
 
 router.get('/', async (req, res) => {
+
   try {
+    // render favorites to page
+    res.render("home");
     // render favorites to page
     res.render("home");
   } catch (error) {
