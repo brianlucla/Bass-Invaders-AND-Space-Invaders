@@ -4,7 +4,8 @@
             <h2>Your Favorites</h2>
             <div id="favoritesCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    {{#each favorites.Song}}
+{{!-- Look at the below code if we have trouble --}}
+                    {{#each videos}}
                     <div class="carousel-item {{#if @first}}active{{/if}}">
                         <div class="row justify-content-center" id="favoritesPlaylist">
                             {{#each this}}
