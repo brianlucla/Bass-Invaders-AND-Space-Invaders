@@ -5,16 +5,16 @@
             <div id="favoritesCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
 
-                    {{#each videos}}
+                    {{#each favorites.Song}}
                     <div class="carousel-item {{#if @first}}active{{/if}}">
                         <div class="row justify-content-center" id="favoritesPlaylist">
                             {{#each this}}
                             <div class="col-md-4">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="card-title">{{title}}</h5>
-                                        <p class="card-text">{{description}}</p>
-                                        <a href="{{videoUrl}}" class="btn btn-primary">Watch Video</a>
+                                        <h5 class="card-title">{{this.song_title}}</h5>
+                                        <p class="card-text">{{this.artist}}</p>
+                                        <a href={{this.youtube_url}} class="btn btn-primary">Watch Video</a>
                                     </div>
                                 </div>
                             </div>
