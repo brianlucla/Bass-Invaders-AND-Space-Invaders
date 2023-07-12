@@ -212,7 +212,7 @@ h1 {
 .form-box {
 
   margin: 30px auto;
-  max-width: 400px;
+  max-width: 100%;
   padding: 20px;
   border: 2px solid var(--tea);
   background-color: #212529;
@@ -307,13 +307,21 @@ h1 {
 #sign-in-btn {
     background-color: var(--color1);
     padding: 15px 30px !important;
+    box-shadow: 0 0 20px var(--color1);
 }
 
-#sign-up-btn {
+#log-in-btn {
+    background-color: var(--pnk)!important;
+    border: 1px solid var(--pnk)
+    padding: 15px 30px !important;
+    box-shadow: 0 0 20px var(--pnk);
+}
+
+/* #sign-up-btn {
     background-color: #fc97d0 !important;
     border: solid 2px #fc97d0 !important;
     padding: 15px 30px !important;
-}
+} */
 
 #sign-up-btn:hover{
 		background: #212529 !important;

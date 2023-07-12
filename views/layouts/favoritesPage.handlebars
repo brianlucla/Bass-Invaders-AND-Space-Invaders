@@ -16,16 +16,15 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-
+    
             <a class="navbar-brand" href="#">
-                <img src="/images/logo.png" alt="Logo" height="40">
+                <img src="./public/images/logo.png" alt="Logo" height="40">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse container-fluid" id="navbarNav"
-                style="justify-content: space-between;">
+            <div class="collapse navbar-collapse container-fluid" id="navbarNav" style="justify-content: space-between;">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="btn btn-primary" href="#main-container">Search</a>
@@ -36,12 +35,22 @@
                     <li class="nav-item">
                         <a class="btn btn-primary" href="#fav-container">Favorites</a>
                     </li>
+                    </li>
                     <li class="nav-item">
-                        <a class="btn btn-primary" href="#">About Us</a>
+                        <a class="btn btn-primary" href="#aboutUsBackground">About Us</a>
                     </li>
                 </ul>
+                <div class="d-flex">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLogin">
+                        Log In / Sign Up
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                        Sign Out
+                    </button>
+    
+                </div>
+    
             </div>
-        </div>
     </nav>
     <!-- end of navbar  -->
 
