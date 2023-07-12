@@ -42,7 +42,6 @@ body {
 }
 
 
-
 .navbar {
     margin: auto;
     padding: 15px 0;
@@ -236,6 +235,7 @@ h1 {
     padding-right: 16px !important;
     border-radius: 46px !important;
     margin: 5px !important;
+    font-weight: bold;
 }
 
 .btn-primary:hover {
