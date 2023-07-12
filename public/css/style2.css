@@ -85,7 +85,7 @@ body {
 
 h1 {
     font-size: 24px;
-    textalign: center;
+    text-align: center;
     margin-bottom: 10px;
 }
 
@@ -334,7 +334,7 @@ h1 {
 
 /* password strength  */
 /* 
-.container .strenghtMeter {
+.container .strengthMeter {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -343,7 +343,7 @@ h1 {
     background-color: #222;
 }
 
-.container .strenghtMeter::before {
+.container .strengthMeter::before {
     content: "";
     position: absolute;
     width: 0;
@@ -352,25 +352,25 @@ h1 {
     background: #f00;
 }
 
-.container.weak .strenghtMeter::before {
+.container.weak .strengthMeter::before {
     width:10%;
     background: #f00;
     filter: drop-shadow(0 0 5px #f00) drop-shadow(0 0 10px #f00) drop-shadow(0 0 20px #f00);
 }
 
-.container.moderate .strenghtMeter::before {
+.container.moderate .strengthMeter::before {
     width: 70%;
     background: #eedc3d;
     filter: drop-shadow(0 0 5px #eedc3d) drop-shadow(0 0 10px #eedc3d) drop-shadow(0 0 20px #eedc3d);
 }
 
-.container.strong .strenghtMeter::before {
+.container.strong .strengthMeter::before {
     width: 100%;
     background: #18e605;
     filter: drop-shadow(0 0 5px #18e605) drop-shadow(0 0 10px #18e605) drop-shadow(0 0 20px #18e605);
 }
 
-.container .strenghtMeter::after {
+.container .strengthMeter::after {
     position: absolute;
     top: -45px;
     left: 30px;
@@ -378,19 +378,19 @@ h1 {
     color: aliceblue;
 }
 
-.container.container.weak .strenghtMeter::after {
+.container.container.weak .strengthMeter::after {
     content: "Weak Password";
     color: #f00;
     filter: drop-shadow(0 0 5px #f00);
 }
 
-.container.container.container.moderate .strenghtMeter::after {
+.container.container.container.moderate .strengthMeter::after {
     content: "Moderate Password";
     color: #eedc3d;
     filter: drop-shadow(0 0 5px #eedc3d);
 }
 
-.container.container.container.container.strong .strenghtMeter::after {
+.container.container.container.container.strong .strengthMeter::after {
     content: "Strong Password";
     color: #18e605;
     filter: drop-shadow(0 0 5px #18e605);
@@ -489,7 +489,7 @@ h1 {
     background-size: cover;
 }
 
-/* ----------------- SEARCHBAR SECTION  --------------- */
+/* ----------------- SEARCH BAR SECTION  --------------- */
 
 .search-container {
     padding: 100px 0 50px;
@@ -555,28 +555,38 @@ h1 {
 
 /* ----------------- ABOUT US PAGE  --------------- */
 
+#aboutUsBackground {
+    background-repeat:no-repeat ;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    margin: 50px auto;
+}
 
 .about-us-box {
     color: white;
-    margin: 20px;
-    border: 2px solid var(--color1);
-    background-color: rgba(59, 125, 129, 0.7); /* Background color with 80% transparency */
-    box-shadow: 0 0 20px var(--color1);
+    margin: 50px auto;
+    border: 2px solid var(--pnk);
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    box-shadow: 5px 20px 50px var(--pnk);
     padding: 50px;
     text-align: center;
     line-height: 35px;
     border-radius: 10px;
     height: auto;
+    display: flex;
+    width: 100%;
+    height: 100%
 }
 
 #teamphoto {
     max-height: 375px;
-    border: 2px solid var(--color1);
-    box-shadow: 0 0 20px var(--color1);
+    border: 1px solid var(--pnk);
+    box-shadow: 5px 15px 50px var(--pnk);
     display: block;
     margin: 0 auto;
     margin-top: 10%;
-    border: 3px solid var(--color1);
     border-radius: 50px;
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
@@ -695,11 +705,8 @@ a.btn.btn-primary {
     display: block;
 }
 
-}
 
-#aboutUsBackground {
-    width: 100%;
-}
+
 
 /* END ABOUT US PAGE */
 

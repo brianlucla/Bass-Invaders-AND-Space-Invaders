@@ -38,7 +38,7 @@ function flipForm() {
 //   let strength = Strength(password);
 //   if(strength >= 2) {
 //     container.classList.add("weak");
-//     continer.classList.remove("moderate");
+//     container.classList.remove("moderate");
 //     container.classList.remove("strong");
 //   } else if(strength >= 2 && strength <= 4) {
 //     container.classList.remove("weak");
