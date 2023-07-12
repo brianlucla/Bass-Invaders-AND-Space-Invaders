@@ -16,7 +16,10 @@ router.get("/", withAuth, async (req, res) => {
     const favorites = favoritesData.map((favorite) => {
       favorite.get({ plain: true });
     });
-    res.render("favorites", { favorites });
+    res.render("favorites", {
+      layout:"favoritesPage",
+      favorites
+    });
   } catch (error) {
     res.status(500).json(error);
   }

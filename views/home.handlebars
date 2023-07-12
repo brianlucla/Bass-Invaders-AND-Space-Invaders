@@ -8,7 +8,7 @@
     <title>BASS-INVADERS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="./public/css/style2.css">
+    <link rel="stylesheet" href="/css/style2.css">
 </head>
 
 <body class="signedout">
@@ -19,7 +19,7 @@
         <div class="container-fluid">
 
             <a class="navbar-brand" href="#">
-                <img src="./public/images/logo.png" alt="Logo" height="40">
+                <img src="/images/logo.png" alt="Logo" height="40">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,7 +42,7 @@
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLogin">
                         Log In / Sign Up
                     </button>
-                    <button type="button" class="btn btn-primary">
+                    <button type="button" class="btn btn-primary" id="sign-out">
                         Sign Out
                     </button>
 
@@ -151,7 +151,7 @@
                     <input type="text" class="search-input form-control" placeholder="What's the mood / occassion?"
                         id="search-song">
                     <button type="submit" class="btn btn-primary" id="submit-song">Search</button>
-                    <button type="submit" class="btn btn-primary" id="submit-song">&#129293;</button>
+                    {{!-- <button type="submit" class="btn btn-primary" id="submit-song">&#129293;</button> --}}
                 </div>
                 <div class="output-container">{{{body}}}</div>
             </div>
@@ -253,7 +253,7 @@
     </div>
     <!-- begin about us section -->
 
-    <div #=aboutUs id="aboutUsBackground" style="background-image: url('./public/images/aboutUs8.avif');">
+    <div #=aboutUs id="aboutUsBackground" style="background-image: url('/images/aboutUs8.avif');">
         <div class="about-us-container">
             <div class="row">
                 <div class="col-md-6">
@@ -284,7 +284,7 @@
                         <div class="card-body">
                             <h2>The Coders:</h2>
                             <br>
-                            <p><img id="teamphoto" src="./public/images/teamphoto.jpg" alt="Team Photo"></p>
+                            <p><img id="teamphoto" src="/images/teamphoto.jpg" alt="Team Photo"></p>
                         </div>
                     </div>
                 </div>
@@ -402,5 +402,7 @@
 
 
 </body>
-
+<script src="/js/login.js"></script>
+<script src="/js/signup.js"></script>
+<script src="/js/playlistGenerator.js"></script>
 </html>
