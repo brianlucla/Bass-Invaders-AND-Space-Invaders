@@ -6,6 +6,16 @@
 
 const inputEl = document.getElementById('search-song');
 const submitEl = document.getElementById('submit-song');
+const playlistEl = document.getElementById('single-playlist');
+const faves = document.getElementById("favorite-btn");
+const video1El = document.getElementById('video-1');
+const video2El = document.getElementById('video-2');
+const video3El = document.getElementById('video-3');
+const video4El = document.getElementById('video-4');
+const video5El = document.getElementById('video-5');
+
+let playlistID;
+
 
 const baseApiUrlY = "https://www.googleapis.com/youtube/v3";
 
@@ -14,10 +24,34 @@ const songHandler = async function (event) {
 
   // Create playlist/songs and add to songs to playlist
   const playlistSongCreator = await playlistCreate();
+  console.log("this is what we're looking for",playlistSongCreator.id);
+  playlistID = playlistSongCreator.id
 
-  
+  // render
+  const getSong = await fetch(`/api/playlist/${playlistID}`,{
+    method:'GET',
+    headers:{
+      'Content-Type':'application/json'
+    }
+  });
 
-  // render playlist and songs to page
+  let i = 1;
+  const songData = await getSong.json();
+  playlistEl.textContent = '';
+  const mappedArray = songData.songs.map((song)=>{
+    playlistEl.textContent += `\n
+    Song Title: ${song.song_title}\n
+    Artist: ${song.artist}\n
+    Youtube Link: ${song.youtube_url}
+    `;
+    console.log(i);
+    const videoEl = document.getElementById(`video-${i++}`);
+    
+    console.log(videoEl);
+    videoEl.setAttribute("src", `${song.youtube_url}`);
+    
+    
+  });
 };
 
 // returns array of song objects containing name, artist, and youtube link
@@ -123,21 +157,26 @@ const generateYoutubeURL = async function (songName, artistName) {
     }
   }
 
-submitEl.addEventListener('click', songHandler);``
+const favoritePlaylist = async function(){
+  
+  console.log(playlistID);
+  const response = await fetch(`/api/playlist/${playlistID}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 
-  console.log(apiURL);
+  if (response.ok) {
+    console.log("Item favorite status updated");
+    // Perform any necessary actions after updating the favorite status
+  } else {
+    console.log("Failed to update item favorite status");
+  }
+}
 
->>>>>>> 6a7a880 (changes to routes and public js)
-  fetch(apiURL)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data.items[0].id.videoId);
-      console.log(`https://www.youtube.com/embed/${data.items[0].id.videoId}`);
-      return `https://www.youtube.com/embed/${data.items[0].id.videoId}`;
-    });
-};
-
-submitEl.addEventListener('click', songHandler);``
+submitEl.addEventListener('click', songHandler);
 
 // giveSongs();
 
+faves.addEventListener("click", favoritePlaylist);

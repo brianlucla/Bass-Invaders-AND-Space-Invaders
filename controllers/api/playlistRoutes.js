@@ -39,13 +39,13 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.put("/", withAuth, async (req, res) => {
+router.put("/:id", async (req, res) => {
   try {
     const playlistData = await Playlist.update(
       { favorite: true },
       {
         where: {
-          id: req.body.id,
+          id: req.params.id,
         },
       }
     );
