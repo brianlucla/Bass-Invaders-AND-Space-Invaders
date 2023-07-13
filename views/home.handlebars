@@ -9,24 +9,24 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style2.css">
+    <link rel="stylesheet" href="/css/style2.css">
 </head>
 
 <body class="signedout">
 
     <!-- NAVBAR -->
-
+    {{!-- updated handlebars --}}
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-
+    
             <a class="navbar-brand" href="#">
-                <img src="/images/logo.png" alt="Logo" height="40">
+                <img src="./public/images/logo.png" alt="Logo" height="40">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse container-fluid" id="navbarNav"
-                style="justify-content: space-between;">
+            <div class="collapse navbar-collapse container-fluid" id="navbarNav" style="justify-content: space-between;">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="btn btn-primary" href="#main-container">Search</a>
@@ -37,17 +37,21 @@
                     <li class="nav-item">
                         <a class="btn btn-primary" href="#fav-container">Favorites</a>
                     </li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href="#aboutUsBackground">About Us</a>
+                    </li>
                 </ul>
                 <div class="d-flex">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLogin">
                         Log In / Sign Up
                     </button>
-                    <button type="button" class="btn btn-primary" id="sign-out">
+                    <button type="button" class="btn btn-primary">
                         Sign Out
                     </button>
-
+    
                 </div>
-
+    
             </div>
     </nav>
 
@@ -84,9 +88,6 @@
                                             <div class="form-button-actions">
                                                 <button type="submit" id="sign-in-btn" class="btn btn-primary">SIGN
                                                     IN</button>
-                                                <span class="mx-2">OR</span>
-                                                <button type="submit" id="sign-up-btn" class="btn btn-primary">SIGN
-                                                    UP</button>
                                             </div>
                                             <!-- onclick should move when link is clicked  -->
                                             <p class="text-center mt-3">Don't have an account? <a href="#"
@@ -97,7 +98,6 @@
                                 </div>
                             </div>
                             <!-- back face of form -->
-                            <!-- test -->
                             <div class="back">
                                 <div class="form-box">
                                     <h2>Sign Up</h2>
@@ -156,6 +156,7 @@
 
                 </div>
                 <textarea class="output-container" id="single-playlist">{{{body}}}</textarea>
+
             </div>
         </div>
 
@@ -217,55 +218,12 @@
                         </button>
                     </div>
                 </div>
-                <div class="box-right box-container">
-                    <h2>Get pumped up!</h2>
-                    <div id="carouselLeft" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselLeft" data-bs-slide-to="0" class="active"
-                                aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselLeft" data-bs-slide-to="1"
-                                aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselLeft" data-bs-slide-to="2"
-                                aria-label="Slide 3"></button>
-                        </div>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe class="embed-responsive-item"
-                                        src="https://www.youtube.com/embed/YOUR_VIDEO_ID"></iframe>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe class="embed-responsive-item"
-                                        src="https://www.youtube.com/embed/YOUR_VIDEO_ID"></iframe>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe class="embed-responsive-item"
-                                        src="https://www.youtube.com/embed/YOUR_VIDEO_ID"></iframe>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselLeft"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselLeft"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
     <!-- begin about us section -->
 
-    <div #=aboutUs id="aboutUsBackground" style="background-image: url('/images/aboutUs8.avif');">
+    <div id="aboutUsBackground" style="background-image: url('./public/images/bg-Hero.jpg');">
         <div class="about-us-container">
             <div class="row">
                 <div class="col-md-6">
